@@ -1,0 +1,62 @@
+header{
+  width:100%;
+  height:60px;
+  background-color: #003366;
+  position: flex;
+}
+
+.title{
+  margin-bottom: .5rem;
+  font-family: inherit;
+  font-weight: 500;
+  line-height: 1.2;
+  font-size: 2rem;
+  width: 50%;
+  float:left;
+  margin-left:70px;
+}
+
+.text_font{
+  color: #FFFFAA;
+}
+
+
+.head_content{
+  margin-top:8px;
+  margin-bottom:8px;
+  width:100%;
+  height:50px;
+  display: inline-block;
+  padding-right: 100px;
+  padding-left: 150px;
+}
+
+.par_button{
+  margin-top:3px;
+  margin-left:150px;
+  float:left;
+}
+
+.user_name_box{
+  background-color: #CCFFFF;
+  margin-left:10px;
+  margin-right:10px;
+  padding:6px;
+  float:left;
+  border-radius: 5px;
+}
+
+.logout_box{
+  background-color: #FFDDFF;
+  margin-left:10px;
+  margin-right:10px;
+  padding:6px;
+  float:left;
+  border-radius: 5px;
+}
+
+.main_page{
+  width: 100%;
+  height: 92vh;
+  background-color: #F3FFD8;
+}
