@@ -21,4 +21,4 @@ Route::get('/', 'TopController@index');
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::resource('users', 'UserController');
-Route::resource('users.contents', 'UserController');
+Route::resource('users.contents', 'ContentController');

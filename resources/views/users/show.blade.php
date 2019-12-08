@@ -24,7 +24,22 @@
         <a href="{{ route('logout') }}">ログアウト</a>
       </header>
       <div class="use_content_box">
-        工事中
+        <div class="form_box">
+          <a href="/users/{{$user->id}}/contents" method="get">新規投稿</a><br />
+        </div>
+        <div class="content_box">
+          @foreach ($contents as $content)
+            <div class="content_title">
+              {{$content->title}}
+            </div>
+            <div class="content_body">
+              {{$content->body}}
+            </div>
+            <div class="content_edit_button">
+              <a href="/users/{{$user->id}}/contents/{{$content->id}}/edit" method="get">編集</a><br />
+            </div>
+          @endforeach
+        </div>
       </div>
     @endif
   </body>

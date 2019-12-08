@@ -3,7 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
+use App\user;
+use App\content;
+use Validator;
 class ContentController extends Controller
 {
     /**
@@ -13,7 +17,13 @@ class ContentController extends Controller
      */
     public function index()
     {
-        //
+        $contents = Content::all();
+        $user = Auth::user();
+        $params = [
+            'user' => $user,
+            'content' => $contents,
+        ];
+        return view('contents.index', $params);
     }
 
     /**
@@ -34,7 +44,35 @@ class ContentController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $content = new Content;
+        $form = $request->all();
+
+        // 最低限なバリデーション処理です。ここでは特に説明はしません。
+        $rules = [
+            'user_id' => 'integer|required', // 2項目以上条件がある場合は「 | 」を挟む
+            'title' => 'required',
+            'body' => 'required',
+        ];
+        $body = [
+            'user_id.integer' => 'System Error',
+            'user_id.required' => 'System Error',
+            'title.required'=> 'タイトルが入力されていません',
+            'body.required'=> 'メッセージが入力されていません'
+        ];
+        $validator = Validator::make($form, $rules, $body);
+
+        if($validator->fails()){
+            return redirect('/home')
+                ->withErrors($validator)
+                ->withInput();
+        }else{
+            unset($form['_token']);
+            $content->user_id = $request->user_id;
+            $content->title = $request->title;
+            $content->body = $request->body;
+            $content->save();
+            return redirect('/');
+        }
     }
 
     /**
@@ -56,7 +94,13 @@ class ContentController extends Controller
      */
     public function edit($id)
     {
-        //
+        $content = Content::find($id);
+        $user = Auth::user();
+        $params = [
+            'user' => $user,
+            'content' => $content,
+        ];
+        return view('contents.edit', $params);
     }
 
     /**
@@ -68,7 +112,35 @@ class ContentController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $content = Content::find($id);
+        $form = $request->all();
+
+        // 最低限なバリデーション処理です。ここでは特に説明はしません。
+        $rules = [
+            'user_id' => 'integer|required', // 2項目以上条件がある場合は「 | 」を挟む
+            'title' => 'required',
+            'body' => 'required',
+        ];
+        $body = [
+            'user_id.integer' => 'System Error',
+            'user_id.required' => 'System Error',
+            'title.required'=> 'タイトルが入力されていません',
+            'body.required'=> 'メッセージが入力されていません'
+        ];
+        $validator = Validator::make($form, $rules, $body);
+
+        if($validator->fails()){
+            return redirect('/home')
+                ->withErrors($validator)
+                ->withInput();
+        }else{
+            unset($form['_token']);
+            $content->user_id = $request->user_id;
+            $content->title = $request->title;
+            $content->body = $request->body;
+            $content->save();
+            return redirect('/');
+        }
     }
 
     /**

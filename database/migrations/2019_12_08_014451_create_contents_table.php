@@ -19,6 +19,7 @@ class CreateContentsTable extends Migration
             $table->text('body');
             $table->timestamp('created_at')->nullable();
             $table->timestamp('updated_at')->nullable();
+            $table->string('user_id');
         });
     }
 

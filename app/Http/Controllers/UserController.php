@@ -50,9 +50,10 @@ class UserController extends Controller
     public function show($id)
     {
         $user = User::find($id);
-        // $content = Content::
+        $contents = Content::where('user_id', $id)->get();
         $params = [
             'user' => $user,
+            'contents' => $contents 
         ];
 
         return view('users.show', $params);
