@@ -60,3 +60,14 @@ header{
   height: 92vh;
   background-color: #F3FFD8;
 }
+
+.d_image_box{
+  margin:0 300px;
+}
+
+.my_image{
+  height: 35%;
+  width: 35%;
+  margin-left: 450px;
+  margin-top: 80px;
+}

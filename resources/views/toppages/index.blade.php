@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <!-- <link href="{{asset("css/main_page.css")}}" rel="stylesheet"> -->
     <link href="https://fonts.googleapis.com/css?family=Alegreya+Sans+SC:300 rel="stylesheet">
-    <link href="css/_reset.scss" rel="stylesheet" type="text/css">
+    <link href="css/_reset.css" rel="stylesheet" type="text/css">
     <link href="{{ asset('css/mainpage.css') }}" rel="stylesheet">
     <title>Dream Diary</title>
     
@@ -38,6 +38,9 @@
         </div>
     </header>
     <div class="main_page">
+      <div class="d_image_box">
+        <img src="/images/illust3199.png" alt="inu" class="my_image">
+      </div>
     </div>
   </body>
 </html>
