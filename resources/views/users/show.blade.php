@@ -21,6 +21,7 @@
         <div class = "use_name_box">
           {{$user->name}}
         </div>
+        <a href="/users/{{$user->id}}/edit">プロフィール変更</a>
         <a href="{{ route('logout') }}">ログアウト</a>
       </header>
       <div class="use_content_box">
