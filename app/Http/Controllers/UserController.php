@@ -89,16 +89,16 @@ class UserController extends Controller
             $rules = [
                 'name' => 'required',
                 'intro' => 'required',
-                // 'icon' => [
-                //     // 必須
-                //     'required',
-                //     // アップロードされたファイルであること
-                //     'file',
-                //     // 画像ファイルであること
-                //     'image',
-                //     // MIMEタイプを指定
-                //     'mimes:jpeg,png',
-                // ],
+                'icon' => [
+                    // 必須
+                    'required',
+                    // アップロードされたファイルであること
+                    'file',
+                    // 画像ファイルであること
+                    'image',
+                    // MIMEタイプを指定
+                    'mimes:jpeg,png',
+                ],
             ];
         }else{
             $rules = [
