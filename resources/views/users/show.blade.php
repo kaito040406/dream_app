@@ -38,6 +38,13 @@
             <div class="content_edit_button">
               <a href="/users/{{$user->id}}/contents/{{$content->id}}/edit" method="get">編集</a><br />
             </div>
+            <div class="content_delete_button">
+            <form action="/users/{{$user->id}}/contents/{{$content->id}}" method="post">
+              {{ csrf_field() }}
+              <input name="_method" type="hidden" value="DELETE">
+              <input type="submit" class="delete" value="削除">
+            </form>
+            </div>
           @endforeach
         </div>
       </div>
