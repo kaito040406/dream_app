@@ -15,10 +15,10 @@ class AddColumnToUsersTable extends Migration
     {
         Schema::table('users', function (Blueprint $table) {
             $table->string('intro')->default('はじめまして');
-            $table->string('birth_year')->nullable();
-            $table->string('birth_month')->nullable();
-            $table->string('birth_day')->nullable();
-            $table->string('icon')->nullable();
+            $table->string('birth_year')->default('non_data');
+            $table->string('birth_month')->default('non_data');
+            $table->string('birth_day')->default('non_data');
+            $table->string('icon')->default('noimage.png');
         });
     }
 
