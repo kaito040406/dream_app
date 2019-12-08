@@ -39,6 +39,9 @@
     </header>
     <div class="main_page">
       <div class="d_image_box">
+        <img src="/images/1720429.png" alt="inu" class="d_image">
+      </div>
+      <div class="d2_image_box">
         <img src="/images/illust3199.png" alt="inu" class="my_image">
       </div>
     </div>
