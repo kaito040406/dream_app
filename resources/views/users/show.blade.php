@@ -109,17 +109,23 @@
                       <div class="content_body">
                         {{$content->body}}
                       </div>
-                      <div class="content_edit_button">
-                        <a href="/users/{{$user->id}}/contents/{{$content->id}}/edit" method="get">
-                          <img src="/images/illust1109.png" alt="inu" class="content_edit_image" width="45" height="45">
-                          <div class="edit_content">編集</div>
-                        </a><br />
-                      </div>
-                      <div class="content_delete_button">
-                        <a href="/users/{{$user->id}}/contents/{{$content->id}}/delete" method="get">
-                          <img src="/images/namagomi.png" alt="inu" class="content_edit_image" width="50" height="45">
-                          <div class="edit_content">削除</div>
-                        </a><br />
+                      <div class="setting_bottam">
+                        <div class="creater_box">
+                          <img src="/public/avatar/{{$user->icon}}" alt="inu" class="icon_image" width="45" height="45">
+                          <div class="creater_content">{{$user->name}}さんの投稿です</div>
+                        </div>
+                        <div class="content_edit_button">
+                          <a href="/users/{{$user->id}}/contents/{{$content->id}}/edit" method="get">
+                            <img src="/images/illust1109.png" alt="inu" class="content_edit_image" width="45" height="45">
+                            <div class="edit_content">編集</div>
+                          </a><br />
+                        </div>
+                        <div class="content_delete_button">
+                          <a href="/users/{{$user->id}}/contents/{{$content->id}}/delete" method="get">
+                            <img src="/images/namagomi.png" alt="inu" class="content_edit_image" width="50" height="45">
+                            <div class="edit_content">削除</div>
+                          </a><br />
+                        </div>
                       </div>
                     </div>
                   @endforeach
