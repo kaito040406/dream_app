@@ -1,4 +1,10 @@
-.main_page{
+@import url(https://fonts.googleapis.com/css?family=Amatic+SC);
+
+body{
+  background-color: #F3FFD8;
+}
+
+.main_page_per{
   width: 100%;
 }
 
@@ -53,6 +59,7 @@
 .new_content{
   color: black;
   height: 2px;
+  text-align: center;
 }
 
 .edit_profile_box{
@@ -111,13 +118,68 @@
   padding-left:10px;
   border-radius: 10px 20px 10px 20px;
   font-size: 1.3rem;
+  margin-bottom: 20px;
 }
 
 .main_zone{
   margin-left: 10px;
   margin-right: 10px;
-  background-color: #EDFFBE;
-  box-shadow: 1px 1px 2px gray;
-  padding-left: 10px;
 }
 
+.content_main_box{
+  background-color: #EDFFBE;
+  box-shadow: 1px 1px 2px gray;
+  margin-bottom: 20px;
+}
+
+.content_day{
+  background-color: #003366;
+  margin-bottom: 20px;
+  padding-left:10px;
+  color: #FFFFAA;
+}
+
+.content_title{
+  margin: 25px;
+  font-family: 'Amatic SC', cursive;
+  color: #555555; 
+  background-color: 	#EEFFFF; 
+  box-shadow: 0 0 10px 10px 	#EEFFFF; 
+  display: inline;
+  font-size: 1.3rem;
+}
+
+.content_body{
+  margin: 25px;
+  padding: 10px;
+  width: 550px;
+  border-radius: 10px;
+  font-family: 'Amatic SC', cursive;
+  color: #555555; 
+  background-color: 	#EEFFFF; 
+  box-shadow: 0 0 10px 10px 	#EEFFFF; 
+}
+
+.content_edit_button{
+  height: 70px;
+  width: 60px;
+  background-color: #CCFFFF;
+  border-radius: 5px;
+  border: 3px solid #00FFFF;
+}
+.content_edit_image{
+  padding-left: 6px;
+}
+.edit_content{
+  color: black;
+  text-align: center;
+  font-size:12px;
+}
+
+.content_delete_button{
+  height: 70px;
+  width: 60px;
+  background-color: #EEEEEE;
+  border-radius: 5px;
+  border: 3px solid #BBBBBB;
+}
