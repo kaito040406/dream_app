@@ -100,7 +100,7 @@
                     <div class="content_main_box">
                       <div class="content_day">
                         投稿日
-                        {{$content->created_at}}
+                        {{$content->created_at->format('Y年m月d日')}}
                       </div>
                       <div class="content_title">
                         タイトル:
