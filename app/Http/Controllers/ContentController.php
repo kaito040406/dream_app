@@ -149,10 +149,21 @@ class ContentController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($user_id, $content_id)
     {
-        $content = Content::find($id);
+        $content = Content::find($content_id);
         $content->delete();
         return redirect('/');
+    }
+
+    public function delete($user_id, $content_id)
+    {
+        $content = Content::find($content_id);
+        $user = Auth::user();
+        $params = [
+            'user' => $user,
+            'content' => $content,
+        ];
+        return view('contents.delete', $params);
     }
 }

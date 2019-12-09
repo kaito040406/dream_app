@@ -77,13 +77,11 @@
                   </a><br />
                 </div>
                 <div class="user_logout_box">
-                  <a href="" method="get">
+                <a href="{{ route('logout') }}"onclick="event.preventDefault();
+                                                      document.getElementById('logout-form').submit();">
                     <img src="/images/1550411.png" alt="inu" class="per_image" width="75" height="75">
                       <div class="new_content">
-                        <a href="{{ route('logout') }}"onclick="event.preventDefault();
-                                                      document.getElementById('logout-form').submit();">
                           <div class="new_content">ログアウト</div>
-                        </a>
                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                             {{ csrf_field() }}
                         </form>
@@ -92,25 +90,33 @@
                 </div>
               </div>
             </div>
-            <div class="content_box">
-              @foreach ($contents as $content)
-                <div class="content_title">
-                  {{$content->title}}
+            <div class = "content_zone">
+              <div class="content_box">
+                <div class="list_title">
+                  投稿一覧
                 </div>
-                <div class="content_body">
-                  {{$content->body}}
+                <div class="main_zone">
+                  @foreach ($contents as $content)
+                    <div class="content_day">
+                      投稿日
+                      {{$content->created_at}}
+                    </div>
+                    <div class="content_title">
+                      タイトル:
+                      {{$content->title}}
+                    </div>
+                    <div class="content_body">
+                      {{$content->body}}
+                    </div>
+                    <div class="content_edit_button">
+                      <a href="/users/{{$user->id}}/contents/{{$content->id}}/edit" method="get">編集</a><br />
+                    </div>
+                    <div class="content_delete_button">
+                      <a href="/users/{{$user->id}}/contents/{{$content->id}}/delete" method="get">削除</a><br />
+                    </div>
+                  @endforeach
                 </div>
-                <div class="content_edit_button">
-                  <a href="/users/{{$user->id}}/contents/{{$content->id}}/edit" method="get">編集</a><br />
-                </div>
-                <div class="content_delete_button">
-                <form action="/users/{{$user->id}}/contents/{{$content->id}}" method="post">
-                  {{ csrf_field() }}
-                  <input name="_method" type="hidden" value="DELETE">
-                  <input type="submit" class="delete" value="削除">
-                </form>
-                </div>
-              @endforeach
+              </div>
             </div>
           </div>
         </div>

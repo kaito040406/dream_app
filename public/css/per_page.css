@@ -99,3 +99,25 @@
   filter:drop-shadow(10px 10px 10px #4e4e4e);
   transition: 0.4s;
 }
+
+.content_zone{
+  padding-top: 50px;
+}
+
+.list_title{
+  width: 120px;
+  background-color: #003366;
+  color: #FFFFAA;
+  padding-left:10px;
+  border-radius: 10px 20px 10px 20px;
+  font-size: 1.3rem;
+}
+
+.main_zone{
+  margin-left: 10px;
+  margin-right: 10px;
+  background-color: #EDFFBE;
+  box-shadow: 1px 1px 2px gray;
+  padding-left: 10px;
+}
+

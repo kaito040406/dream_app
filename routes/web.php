@@ -22,3 +22,4 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::resource('users', 'UserController');
 Route::resource('users.contents', 'ContentController');
+Route::get('/users/{user}/contents/{content}/delete', 'ContentController@delete');
