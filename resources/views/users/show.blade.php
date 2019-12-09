@@ -30,9 +30,13 @@
                 <a>{{$user->name}}さんのマイページ</a>
               </div>
               <div class = "logout_box">
-                <a href="/users/{{$user->id}}/edit" method="get">
-                  プロフィール編集
+                <a href="{{ route('logout') }}"onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                  ログアウト
                 </a>
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                    {{ csrf_field() }}
+                </form>
               </div>
             </div>
         </div>
@@ -59,6 +63,32 @@
                     <img src="/images/1720429.png" alt="inu" class="per_image" width="90" height="75">
                       <div class="new_content">新規投稿</div>
                 </a><br />
+                </div>
+                <div class="edit_profile_box">
+                  <a href="/users/{{$user->id}}/edit" method="get">
+                    <img src="/images/azarasi.png" alt="inu" class="per_image" width="75" height="75">
+                      <div class="new_content">Edit profile</div>
+                  </a><br />
+                </div>
+                <div class="likes_box">
+                  <a href="" method="get">
+                    <img src="/images/illust3199.png" alt="inu" class="per_image" width="75" height="75">
+                      <div class="new_content">お気に入り</div>
+                  </a><br />
+                </div>
+                <div class="user_logout_box">
+                  <a href="" method="get">
+                    <img src="/images/1550411.png" alt="inu" class="per_image" width="75" height="75">
+                      <div class="new_content">
+                        <a href="{{ route('logout') }}"onclick="event.preventDefault();
+                                                      document.getElementById('logout-form').submit();">
+                          <div class="new_content">ログアウト</div>
+                        </a>
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                            {{ csrf_field() }}
+                        </form>
+                      </div>
+                  </a><br />
                 </div>
               </div>
             </div>

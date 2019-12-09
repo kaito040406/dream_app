@@ -36,12 +36,13 @@
 }
 
 .form_box{
-  margin-left: 40px;
+  margin-left: 46px;
   width: 100px;
   text-align:center;
   background-color: #FFCCFF;
   border-radius: 5px;
   border: 3px solid #FF55FF;
+  float: left;
 }
 
 .form_box:hover {
@@ -52,4 +53,49 @@
 .new_content{
   color: black;
   height: 2px;
+}
+
+.edit_profile_box{
+  margin-left: 46px;
+  width: 100px;
+  text-align:center;
+  background-color: #CCFFFF;
+  border-radius: 5px;
+  border: 3px solid #00FFFF;
+  float: left;
+}
+
+.edit_profile_box:hover {
+  filter:drop-shadow(10px 10px 10px #4e4e4e);
+  transition: 0.4s;
+}
+
+.likes_box{
+  margin-left: 46px;
+  width: 100px;
+  text-align:center;
+  background-color: #FFEEFF;
+  border-radius: 5px;
+  border: 3px solid #FF55FF;
+  float: left;
+}
+
+.likes_box:hover {
+  filter:drop-shadow(10px 10px 10px #4e4e4e);
+  transition: 0.4s;
+}
+
+.user_logout_box{
+  margin-left: 46px;
+  width: 100px;
+  text-align:center;
+  background-color: #EEEEEE;
+  border-radius: 5px;
+  border: 3px solid #888888;
+  float: left;
+}
+
+.user_logout_box:hover {
+  filter:drop-shadow(10px 10px 10px #4e4e4e);
+  transition: 0.4s;
 }
