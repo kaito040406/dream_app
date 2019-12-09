@@ -53,8 +53,13 @@
               <div class="per_name">
                 {{$user->name}} さん
               </div>
-              <div class="form_box">
-                <a href="/users/{{$user->id}}/contents" method="get">新規投稿</a><br />
+              <div class="content_box">
+                <div class="form_box">
+                  <a href="/users/{{$user->id}}/contents" method="get">
+                    <img src="/images/1720429.png" alt="inu" class="per_image" width="90" height="75">
+                      <div class="new_content">新規投稿</div>
+                </a><br />
+                </div>
               </div>
             </div>
             <div class="content_box">
