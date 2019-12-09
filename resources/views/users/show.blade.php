@@ -11,42 +11,59 @@
     <title>Dream Diary</title>
     <link href="https://fonts.googleapis.com/css?family=Alegreya+Sans+SC:300 rel="stylesheet">
     <link href="css/_reset.scss" rel="stylesheet" type="text/css">
-    <link href="css/main_page.scss" rel="stylesheet" type="text/css">
+    <link href="{{ asset('css/mainpage.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/per_page.css') }}" rel="stylesheet">
   </head>
   <body>
     @if( Auth::check() )
-      <header>
-        <h2>Dream diary</h2>
-        <a href="{!! action('TopController@index') !!}">Home</a>
-        <div class = "use_name_box">
-          {{$user->name}}
+    <header>
+      <div class="head_content">
+        <div class="title">
+          <a href="{!! action('TopController@index') !!}">
+            <div class="text_font">
+              Dream diary
+            </div>
+          </a>
         </div>
-        <a href="/users/{{$user->id}}/edit">プロフィール変更</a>
-        <a href="{{ route('logout') }}">ログアウト</a>
-      </header>
-      <div class="use_content_box">
-        <div class="form_box">
-          <a href="/users/{{$user->id}}/contents" method="get">新規投稿</a><br />
+            <div class = "par_button">
+              <div class = "user_name_box">
+                <a>{{$user->name}}さんのマイページ</a>
+              </div>
+              <div class = "logout_box">
+                <a href="/users/{{$user->id}}/edit" method="get">
+                  プロフィール編集
+                </a>
+              </div>
+            </div>
         </div>
-        <div class="content_box">
-          @foreach ($contents as $content)
-            <div class="content_title">
-              {{$content->title}}
+    </header>
+      <div class="main_box">
+        <div class="use_content_box">
+          <div class="per_box">
+            <div class="form_box">
+              <a href="/users/{{$user->id}}/contents" method="get">新規投稿</a><br />
             </div>
-            <div class="content_body">
-              {{$content->body}}
-            </div>
-            <div class="content_edit_button">
-              <a href="/users/{{$user->id}}/contents/{{$content->id}}/edit" method="get">編集</a><br />
-            </div>
-            <div class="content_delete_button">
-            <form action="/users/{{$user->id}}/contents/{{$content->id}}" method="post">
-              {{ csrf_field() }}
-              <input name="_method" type="hidden" value="DELETE">
-              <input type="submit" class="delete" value="削除">
-            </form>
-            </div>
-          @endforeach
+          </div>
+          <div class="content_box">
+            @foreach ($contents as $content)
+              <div class="content_title">
+                {{$content->title}}
+              </div>
+              <div class="content_body">
+                {{$content->body}}
+              </div>
+              <div class="content_edit_button">
+                <a href="/users/{{$user->id}}/contents/{{$content->id}}/edit" method="get">編集</a><br />
+              </div>
+              <div class="content_delete_button">
+              <form action="/users/{{$user->id}}/contents/{{$content->id}}" method="post">
+                {{ csrf_field() }}
+                <input name="_method" type="hidden" value="DELETE">
+                <input type="submit" class="delete" value="削除">
+              </form>
+              </div>
+            @endforeach
+          </div>
         </div>
       </div>
     @endif

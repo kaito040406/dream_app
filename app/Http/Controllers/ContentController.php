@@ -92,9 +92,9 @@ class ContentController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($user_id, $content_id)
     {
-        $content = Content::find($id);
+        $content = Content::find($content_id);
         $user = Auth::user();
         $params = [
             'user' => $user,
