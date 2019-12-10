@@ -110,9 +110,9 @@ class ContentController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $id, $content_id)
     {
-        $content = Content::find($id);
+        $content = Content::find($content_id);
         $form = $request->all();
 
         // 最低限なバリデーション処理です。ここでは特に説明はしません。

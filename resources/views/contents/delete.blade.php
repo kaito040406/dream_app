@@ -14,6 +14,8 @@
     <link href="https://fonts.googleapis.com/css?family=Alegreya+Sans+SC:300 rel="stylesheet">
     <link href="css/_reset.css" rel="stylesheet" type="text/css">
     <link href="{{ asset('css/mainpage.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/per_page.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/new_content.css') }}" rel="stylesheet">
     <title>Dream Diary</title>
     
   </head>
@@ -60,7 +62,7 @@
       <form action="/users/{{$user->id}}/contents/{{$content->id}}" method="post">
         {{ csrf_field() }}
         <input name="_method" type="hidden" value="DELETE">
-        <input type="submit" class="delete" value="削除">
+        <input type="submit" class="delete" value="削　除">
       </form>
     @else
       

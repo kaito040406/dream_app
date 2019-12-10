@@ -52,7 +52,7 @@
                 <textarea class="form_body" name="body" placeholder="メッセージ">{{$content->body}}</textarea>
             </div>
             <input type="hidden" name="_method" value="PUT">
-            <input type="submit" class="content_create_bottan" value="編　集">
+            <input type="submit" class="content_create_bottan" value="編  集">
           </form>
         </div>
       </div>
