@@ -1,0 +1,45 @@
+.user_edit_form{
+  margin: 0 auto;
+  width: 60%;
+  padding: 70px 0;
+}
+
+.f_name_f{
+  padding-left:30px;
+  margin: 10px 30px;
+  font: 1.6rem;
+}
+.form_name{
+  width: 150px;
+  height: 35px;
+  margin-left: 16px;
+}
+.f_birth_f{
+  padding-left:30px;
+  margin: 10px 30px;
+  font: 1.6rem;
+}
+
+.form_year{
+  width: 80px;
+  height: 35px;
+}
+.form_month{
+  width: 80px;
+  height: 35px;
+}
+.form_day{
+  width: 80px;
+  height: 35px;
+}
+.f_intoro_f{
+  padding-left:30px;
+  margin: 10px 30px;
+  font: 1.6rem;
+}
+.form_intro2{
+  width: 300px;
+  height: 35px;
+}
+
+
