@@ -71,7 +71,7 @@ class ContentController extends Controller
             $content->title = $request->title;
             $content->body = $request->body;
             $content->save();
-            return redirect('/');
+            return redirect("/users/$content->user_id");
         }
     }
 
@@ -139,7 +139,7 @@ class ContentController extends Controller
             $content->title = $request->title;
             $content->body = $request->body;
             $content->save();
-            return redirect('/');
+            return redirect("/users/$id");
         }
     }
 
@@ -153,7 +153,7 @@ class ContentController extends Controller
     {
         $content = Content::find($content_id);
         $content->delete();
-        return redirect('/');
+        return redirect("/users/$user_id");
     }
 
     public function delete($user_id, $content_id)
