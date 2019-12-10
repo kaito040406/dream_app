@@ -60,9 +60,14 @@
             一言紹介
             <input type="text" class="form_intro2" name="intro" value="{{ $user->intro }}">
           </div>
-          <input type="file" name="icon" value="{{ $user->icon }}">
-          <input type="hidden" name="_method" value="PUT">
-          <input type="submit" class="create" value="編  集">
+          <div class="f_icon_f">
+            画像を選択してください
+            <input type="file" name="icon" class="file_bottan" value="{{ $user->icon }}">
+          </div>
+          <div class="f_submit_f">
+            <input type="hidden" name="_method" value="PUT">
+            <input type="submit" class="create" value="編  集">
+          </div>
         </form>
       <div>
     @endif
