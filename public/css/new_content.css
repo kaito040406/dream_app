@@ -1,0 +1,39 @@
+
+.main_new_content{
+  padding-top: 100px;
+}
+
+.title_form{
+  border:none;
+  margin: 25px;
+  padding: 10px;
+  width: 550px;
+  border-radius: 10px;
+  font-family: 'Amatic SC', cursive;
+  color: #555555; 
+  box-shadow: 0 0 10px 10px 	#EEFFFF; 
+}
+
+.form_body{
+  border:none;
+  margin: 25px;
+  padding: 10px;
+  width: 550px;
+  border-radius: 10px;
+  font-family: 'Amatic SC', cursive;
+  color: #555555; 
+  box-shadow: 0 0 10px 10px 	#EEFFFF; 
+  height: 400px;
+}
+
+.content_create_bottan{
+  margin-top: 15px;
+  border:none;
+  width: 60%;
+  margin-left: 120px;
+  height: 50px;
+  color: white;
+  background-color: #003366;
+  font-size: 1.3rem;
+  border-radius: 5px;
+}

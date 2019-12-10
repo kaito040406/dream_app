@@ -11,16 +11,50 @@
     <title>Dream Diary</title>
     <link href="https://fonts.googleapis.com/css?family=Alegreya+Sans+SC:300 rel="stylesheet">
     <link href="css/_reset.scss" rel="stylesheet" type="text/css">
-    <link href="css/main_page.scss" rel="stylesheet" type="text/css">
+    <link href="{{ asset('css/mainpage.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/per_page.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/new_content.css') }}" rel="stylesheet">
   </head>
   <body>
-    <form action="/users/{{$user->id}}/contents" method="post">
-      {{ csrf_field() }}
-      <input type="hidden" name="user_id" value="{{ $user->id }}">
-      <input type="text" class="form" name="title" placeholder="タイトル">
-      <div class="form_box">
-          <textarea class="form" name="body" placeholder="メッセージ"></textarea>
+    @if( Auth::check() )
+    <header>
+      <div class="head_content">
+        <div class="title">
+          <a href="{!! action('TopController@index') !!}">
+            <div class="text_font">
+              Dream diary
+            </div>
+          </a>
+        </div>
+            <div class = "par_button">
+              <div class = "user_name_box">
+                <a href="/users/{{$user->id}}">{{$user->name}}さんのマイページ</a>
+              </div>
+              <div class = "logout_box">
+                <a href="{{ route('logout') }}"onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                  ログアウト
+                </a>
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                    {{ csrf_field() }}
+                </form>
+              </div>
+            </div>
+        </div>
+    </header>
+      <div class="main_new_content">
+        <div class="main_box">
+          <form action="/users/{{$user->id}}/contents" method="post">
+            {{ csrf_field() }}
+            <input type="hidden" name="user_id" value="{{ $user->id }}">
+            <input type="text" class="title_form" name="title" placeholder="タイトル">
+            <div class="form_box_content">
+                <textarea class="form_body" name="body" placeholder="メッセージ"></textarea>
+            </div>
+            <input type="submit" class="content_create_bottan" value="投  稿">
+          </form>
+        </div>
       </div>
-      <input type="submit" class="create" value="投  稿">
-    </form>
+    @endif
   </body>
+</html>
