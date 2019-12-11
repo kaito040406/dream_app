@@ -51,7 +51,7 @@
             <div class="form_box_content">
                 <textarea class="form_body" name="body" placeholder="メッセージ"></textarea>
             </div>
-            <input type="submit" class="content_create_bottan" value="投  稿">
+            <input type="submit" class="content_create_bottan" id="ontent_create_bottan" value="投  稿">
           </form>
         </div>
       </div>
