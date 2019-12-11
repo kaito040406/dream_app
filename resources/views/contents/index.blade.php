@@ -9,11 +9,14 @@
     <!-- <link href="{{asset("css/main_page.css")}}" rel="stylesheet"> -->
     
     <title>Dream Diary</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="{{ asset('js/bl.js') }}"></script>
     <link href="https://fonts.googleapis.com/css?family=Alegreya+Sans+SC:300 rel="stylesheet">
     <link href="css/_reset.scss" rel="stylesheet" type="text/css">
     <link href="{{ asset('css/mainpage.css') }}" rel="stylesheet">
     <link href="{{ asset('css/per_page.css') }}" rel="stylesheet">
     <link href="{{ asset('css/new_content.css') }}" rel="stylesheet">
+    
   </head>
   <body>
     @if( Auth::check() )
@@ -44,7 +47,7 @@
     </header>
       <div class="main_new_content">
         <div class="main_box">
-          <form action="/users/{{$user->id}}/contents" method="post">
+          <form action="/users/{{$user->id}}/contents" id="content_create_bottan" method="post">
             {{ csrf_field() }}
             <input type="hidden" name="user_id" value="{{ $user->id }}">
             <input type="text" class="title_form" name="title" placeholder="タイトル">
