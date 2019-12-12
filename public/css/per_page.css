@@ -174,9 +174,8 @@ body{
   background-color: #CCFFFF;
   border-radius: 5px;
   border: 3px solid #00FFFF;
-  float: left;
+  float: right;
   margin-right: 20px;
-  margin-left: 230px;
 }
 .content_edit_image{
   padding-left: 6px;
@@ -193,7 +192,8 @@ body{
   background-color: #EEEEEE;
   border-radius: 5px;
   border: 3px solid #BBBBBB;
-  float: left;
+  float: right;
+  margin-right: 20px;
 }
 
 .creater_box{
