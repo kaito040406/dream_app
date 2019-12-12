@@ -9,6 +9,8 @@
     <!-- <link href="{{asset("css/main_page.css")}}" rel="stylesheet"> -->
     
     <title>Dream Diary</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="{{ asset('js/bl.js') }}"></script>
     <link href="https://fonts.googleapis.com/css?family=Alegreya+Sans+SC:300 rel="stylesheet">
     <link href="css/_reset.scss" rel="stylesheet" type="text/css">
     <link href="{{ asset('css/mainpage.css') }}" rel="stylesheet">
@@ -44,7 +46,7 @@
     </header>
       <div class="main_new_content">
         <div class="main_box">
-        <form action="/users/{{$user->id}}/contents/{{$content->id}}" method="post">
+        <form action="/users/{{$user->id}}/contents/{{$content->id}}" id="content_create_bottan" method="post">
             {{ csrf_field() }}
             <input type="hidden" name="user_id" value="{{ $user->id }}">
             <input type="text" class="title_form" name="title" placeholder="タイトル" value="{{ $content->title }}">
@@ -52,7 +54,7 @@
                 <textarea class="form_body" name="body" placeholder="メッセージ">{{$content->body}}</textarea>
             </div>
             <input type="hidden" name="_method" value="PUT">
-            <input type="submit" class="content_create_bottan" value="編  集">
+            <input type="submit" class="content_create_bottan" id="ontent_create_bottan" value="編  集">
           </form>
         </div>
       </div>

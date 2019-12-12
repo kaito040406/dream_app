@@ -9,6 +9,8 @@
     <!-- <link href="{{asset("css/main_page.css")}}" rel="stylesheet"> -->
     
     <title>Dream Diary</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="{{ asset('js/user_bl.js') }}"></script>
     <link href="https://fonts.googleapis.com/css?family=Alegreya+Sans+SC:300 rel="stylesheet">
     <link href="css/_reset.scss" rel="stylesheet" type="text/css">
     <link href="{{ asset('css/mainpage.css') }}" rel="stylesheet">
@@ -44,7 +46,7 @@
         </div>
     </header>
       <div class="user_edit_form">
-        <form action="/users/{{$user->id}}" method="post" enctype="multipart/form-data">
+        <form action="/users/{{$user->id}}" method="post" id="user_edit_bottan" enctype="multipart/form-data">
           {{ csrf_field() }}
           <div class="f_name_f">
             お名前
