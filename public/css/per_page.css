@@ -28,6 +28,7 @@ body{
 .icon_image{
   border-radius: 50px;
   border: 3px solid #CCCCFF;
+  background-color: whitesmoke;
 }
 
 .per_name{
