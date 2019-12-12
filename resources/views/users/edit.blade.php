@@ -1,13 +1,11 @@
-<!doctype html><!-- HTML5-->
+<!doctype html>
 <html lang="ja">
   <head>
-    <!-- 以下の meta tags（charset と viewport）は必須です-->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <!-- Bootstrap の CSS（CDN経由）の読み込み -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <!-- <link href="{{asset("css/main_page.css")}}" rel="stylesheet"> -->
-    
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/android-chrome-72x72.png">
     <title>Dream Diary</title>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script type="text/javascript" src="{{ asset('js/user_bl.js') }}"></script>

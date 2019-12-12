@@ -1,16 +1,14 @@
-<!doctype html><!-- HTML5-->
+<!doctype html>
 <html lang="ja">
   <head>
   <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <!-- 以下の meta tags（charset と viewport）は必須です-->
     <meta charset="utf-8">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <!-- <link href="{{asset("css/main_page.css")}}" rel="stylesheet"> -->
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/android-chrome-72x72.png">
     <link href="https://fonts.googleapis.com/css?family=Alegreya+Sans+SC:300 rel="stylesheet">
     <link href="css/_reset.css" rel="stylesheet" type="text/css">
     <link href="{{ asset('css/mainpage.css') }}" rel="stylesheet">
