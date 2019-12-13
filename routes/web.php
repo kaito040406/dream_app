@@ -20,6 +20,10 @@ Route::get('/', 'TopController@index');
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::resource('users', 'UserController');
-Route::resource('users.contents', 'ContentController');
-Route::get('/users/{user}/contents/{content}/delete', 'ContentController@delete');
+
+
+Route::group(['middleware' => 'auth'], function() {
+  Route::resource('users', 'UserController');
+  Route::resource('users.contents', 'ContentController');
+  Route::get('/users/{user}/contents/{content}/delete', 'ContentController@delete');
+});

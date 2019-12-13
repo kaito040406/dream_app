@@ -17,7 +17,7 @@
     <link href="{{ asset('css/user_edit.css') }}" rel="stylesheet">
   </head>
   <body>
-    @if( Auth::check() )
+    @if( Auth::id() == $user->id )
     <header>
       <div class="head_content">
         <div class="title">

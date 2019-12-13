@@ -27,7 +27,7 @@
             </div>
           </a>
         </div>
-          @if( Auth::check() )
+          @if( Auth::id() == $user->id )
             <div class = "par_button">
               <div class = "user_name_box">
                 <a href="/users/{{$user->id}}">{{$user->name}}さんのマイページ</a>
