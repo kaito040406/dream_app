@@ -16,10 +16,10 @@
 // });
 
 Auth::routes();
-// Route::get('/', 'TopController@index');
-Route::get('/', function () {
-  return view('test');
-});
+Route::get('/', 'TopController@index');
+// Route::get('/', function () {
+//   return view('test');
+// });
 
 Route::get('/home', 'HomeController@index')->name('home');
 
