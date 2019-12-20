@@ -1,0 +1,97 @@
+body{
+  background-image: url(/images/7207.png);
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+}
+
+.panel-heading{
+  padding-top: 10px;
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  padding-bottom:10px;
+}
+
+.row{
+  height: 100vh;
+}
+
+#all_login_box{
+  max-width: 50%;
+  height:550px;
+  border-radius: 10px;
+  padding: 20px;
+  color: #4e4e4e;
+  background: #CCFFFF;
+  border: 2px dashed #003366;
+  border-radius: 10px;
+  box-shadow: 0 0 0 7px #CCFFFF;
+}
+
+
+#email_box{
+  max-width:100%!important;
+  width:800px;
+}
+
+#pass_box{
+  max-width:100%!important;
+  width:800px;
+}
+
+#all_login_box{
+  margin:150px 250px 0 250px;
+
+}
+
+#form_input{
+  font-size: 1.1rem;
+  margin-top: 10px;
+  margin-bottom: 60px;
+}
+
+#pass_input{
+  font-size: 1.1rem;
+  margin-top: 10px;
+  margin-bottom: 30px;
+}
+
+.form-control{
+  height: 45px;
+  width: 500px;
+  font-size:20px;
+}
+
+#rem_input{
+  width:165px;
+}
+
+
+.checkbox{
+  margin-left:340px;
+  margin-bottom:60px;
+  width:170px;
+}
+
+#check_box1{
+  transform: scale(1.5);
+}
+
+#forget_pass{
+  margin: 20px 0 20px 130px;
+}
+
+.check_box_text{
+  padding-top:2px;
+  float:right;
+}
+
+#submit_btn{
+  font-size: 1.8rem;
+  background-color: #003366;
+  color: #FFFFAA;
+  height: 60px;
+  width: 300px;
+  margin-left: 100px;
+  border-radius: 10px;
+}
