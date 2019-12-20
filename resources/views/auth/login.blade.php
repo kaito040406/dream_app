@@ -52,7 +52,7 @@
                         <div class="form-group">
                             <div class="col-md-8 col-md-offset-4" id = "login_btn">
                                 <button type="submit" class="btn btn-primary" id = "submit_btn">
-                                    Login
+                                    ログイン
                                 </button>
 
                                 <a class="btn btn-link" href="{{ route('password.request') }}" id = "forget_pass">
