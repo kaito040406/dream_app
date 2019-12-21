@@ -15,10 +15,13 @@ body{
 .row{
   height: 100vh;
 }
+.height_box{
+  width:100%;
+  height: 100%;
+}
 
 #all_login_box{
   max-width: 50%;
-  height:570px;
   border-radius: 10px;
   padding: 20px;
   color: #4e4e4e;
@@ -40,7 +43,7 @@ body{
 }
 
 #all_login_box{
-  margin:150px 250px 0 250px;
+  margin:100px 250px 0 250px;
 
 }
 
@@ -97,10 +100,9 @@ body{
 }
 
 #reg_box{
-  margin: 150px 250px 0 250px;
+  margin: 75px 250px 0 250px;
   background-color: white;
   max-width: 50%!important;
-  height:600px;
   border-radius: 10px;
   padding: 20px;
   color: #4e4e4e;
