@@ -130,3 +130,7 @@ body{
 .panel-heading{
   padding-top:20px;
 }
+
+#reset_pass{
+  margin: 100px 270px 0 270px;
+}
