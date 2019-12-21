@@ -52,9 +52,11 @@ class UserController extends Controller
     {
         $user = User::find($id);
         $contents = Content::where('user_id', $id)->get();
+        $contents_count = count($contents);
         $params = [
             'user' => $user,
-            'contents' => $contents 
+            'contents' => $contents, 
+            'contents_count' => $contents_count
         ];
 
         return view('users.show', $params);

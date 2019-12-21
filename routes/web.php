@@ -21,8 +21,6 @@ Route::get('/', 'TopController@index');
 //   return view('test');
 // });
 
-Route::get('/home', 'HomeController@index')->name('home');
-
 
 
 Route::group(['middleware' => 'auth'], function() {
