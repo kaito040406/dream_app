@@ -1,8 +1,10 @@
 import requests
+from bs4 import BeautifulSoup
  
-r = requests.get('https://news.yahoo.co.jp')
+# r = requests.get('https://spicomi.net/media/articles/1540')
+r = requests.get("https://news.yahoo.co.jp/")
+
+soup = BeautifulSoup(r.content, "html.parser")
+
+print(soup.find("ul", "newsFeed_list").text)
  
-print(r.headers)
-print("--------")
-print(r.encoding)
-print(r.content)
