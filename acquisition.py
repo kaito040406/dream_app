@@ -20,7 +20,7 @@ def Detail_page(url):
         coulmn.update({"text" : d_data_text.text})
         i = i + 1
         with open('uranai.csv', 'a') as f:
-          print(str(coulmn["title"]) + ",", str(coulmn["text"]) + "," , file=f)
+          print(str(coulmn["title"]) + "," + str(coulmn["text"]) + "," , file=f)
           f.close()
         coulmn = {}
       print("取得完了")
