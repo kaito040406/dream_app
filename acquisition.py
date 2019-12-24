@@ -15,9 +15,9 @@ def Detail_page(url):
   for d_data_text in d_datas_text:
     if  k >= 3 and k <= last:
       if k % 2 == 1:
-        coulmn = {"title" : d_data_text.text}
+        coulmn = {"title" : d_data_text.text.replace('\n','')}
       elif k % 2 == 0:
-        coulmn.update({"text" : d_data_text.text})
+        coulmn.update({"text" : d_data_text.text.replace('\n','            ')})
         i = i + 1
         with open('uranai.csv', 'a') as f:
           print(str(coulmn["title"]) + "," + str(coulmn["text"]) + "," , file=f)
@@ -30,6 +30,9 @@ def Detail_page(url):
     k = k + 1
     
 
+with open('uranai.csv', 'a') as f:
+  print("title" + "," + "text" + "," , file=f)
+  f.close()
 r = requests.get('https://spicomi.net/media/articles/1540')
 soup = BeautifulSoup(r.content, "html.parser")
 datas = soup.select(".content_ln", recursive=False)
