@@ -11,30 +11,15 @@ def Detail_page(url):
   k = 0
   i = 0
   coulmn = {}
-
-  # for d_data_text in d_datas_text:
-  #   if  k >= 3 and k <= last:
-  #     if k % 2 == 1:
-  #       coulmn = {"title" : d_data_text.text.replace('\n','')}
-  #     elif k % 2 == 0:
-  #       coulmn.update({"text" : d_data_text.text.replace('\n','            ')})
-  #       i = i + 1
-  #       with open('uranai.csv', 'a') as f:
-  #         print(str(coulmn["title"]) + "," + str(coulmn["text"]) + "," , file=f)
-  #         f.close()
-  #       coulmn = {}
-  #     print("取得完了")
-  #     time.sleep(0.5) 
-  #     # text = d_data_text.text
-  #     # print(text)
-  #   k = k + 1
-
   for d_data_text in d_datas_text:
     if ". " in d_data_text.text and i == 0:
       coulmn = {"title" : d_data_text.text.replace('\n','')}
       i = 1
+    elif d_data_text.text == "" and i == 1:
+      print("空白")
     elif i == 1:
-      coulmn.update({"text" : d_data_text.text.replace('\n','            ')})
+      print(d_data_text.text)
+      coulmn.update({"text" : d_data_text.text.replace('\n','')})
       with open('uranai.csv', 'a') as f:
         print(str(coulmn["title"]) + "," + str(coulmn["text"]) + "," , file=f)
         f.close()
