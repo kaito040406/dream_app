@@ -30,7 +30,7 @@ def Detail_page(url):
   #   k = k + 1
 
   for d_data_text in d_datas_text:
-    if ". " in text and i == 0:
+    if ". " in d_data_text.text and i == 0:
       coulmn = {"title" : d_data_text.text.replace('\n','')}
       i = 1
     elif i == 1:
@@ -41,9 +41,10 @@ def Detail_page(url):
       coulmn = {}
       i = 0
       print("取得完了")
-      time.sleep(0.5) 
     else:
       print("無視")
+    
+    time.sleep(0.5) 
     
 
 with open('uranai.csv', 'a') as f:
