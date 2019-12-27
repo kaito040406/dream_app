@@ -17,6 +17,7 @@ with open('output.php', 'a') as e:
   print('   *', file=e)
   print('   * @return void', file=e)
   print('   */', file=e)
+  print('   public function run()', file=e)
   print('   {', file=e)
   print("       DB::table('uranais')->insert([", file=e)
   e.close()
