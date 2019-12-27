@@ -22,7 +22,7 @@ with open('output.php', 'a') as e:
   print("       DB::table('uranais')->insert([", file=e)
   e.close()
 
-with open('export5.csv') as f:
+with open('export6.csv') as f:
   reader = csv.reader(f)
   for row in reader:
     if i != 0:
