@@ -32,6 +32,8 @@ with open('export5.csv') as f:
         print("           'text' => " + "'" + row[1] + "',", file=e)
         print("           'level' => " + "'" + row[2] + "',", file=e)
         print("         ],", file=e)
+        time.sleep(0.08)
+        print("出力完了！！")
         e.close()
     i = i + 1
   f.close()
