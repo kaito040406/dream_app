@@ -15,8 +15,8 @@ class CreateUranaiTablesTable extends Migration
     {
         Schema::create('uranai_tables', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('genre');
-            $table->string('genre_id');
+            $table->string('title');
+            $table->string('text');
             $table->string('level');
             $table->timestamps();
         });
