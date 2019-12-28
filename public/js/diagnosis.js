@@ -6,7 +6,7 @@ $(function(){
     $.ajax({
       url: '/api/ajax/get_json',
       type: 'get',
-      dagaType: 'json',
+      dataType: 'json',
       data: {id: diary_id}
     })
     .done(function(data){
@@ -32,7 +32,33 @@ $(function(){
               }
             }
           })
-          console.log(check_texts);
+          $.ajax({
+            url: '/api/ajax/get_uranai',
+            type: 'post',
+            headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
+            dataType: 'json',
+            data: {check_texts},
+          })
+          .done(function(dreams){
+            var dream_data = [];
+            var i = 0;
+            var k = 0;
+            var sum_point = 0;
+            dreams.hit_dreams.forEach(function(dream){
+              dream.forEach(function(d_d){
+                dream_data[i] = d_d
+                i=i+1
+              })
+            })
+            var dream_data_set = new Set(dream_data)
+            dream_data_set.forEach(function(point){
+              k = k + 1;
+              var suji = parseInt( point.level );
+              sum_point = sum_point + suji;
+            })
+            var ave = sum_point / k;
+            console.log(ave);
+          })
         }
       })
     })
