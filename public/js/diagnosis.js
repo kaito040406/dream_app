@@ -1,12 +1,17 @@
 $(function(){
   $(".content_diagnosis_button").on('click',function(){
-    id = $(this).attr("id")
-    console.log(id)
-    // $.ajax({
-    //   url: '/groups/' + group_id + '/api/messages',
-    //   type: 'get',
-    //   dagaType: 'json',
-    //   data: {id: last_message_id}
-    // })
+    diary_id = $(this).attr("id")
+    $.ajax({
+      url: '/api/ajax/get_json',
+      type: 'get',
+      dagaType: 'json',
+      data: {id: diary_id}
+    })
+    .done(function(data){
+      console.log(data.text[0].body)
+    })
+    .fail(function(){
+      console.log("失敗")
+    })
   })
 })
