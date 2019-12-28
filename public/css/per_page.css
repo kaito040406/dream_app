@@ -211,3 +211,13 @@ body{
   margin-top: 10px;
   padding-left:5px;
 }
+
+.content_diagnosis_button{
+  height: 70px;
+  width: 60px;
+  background-color: #FFEEFF;
+  border-radius: 5px;
+  border: 3px solid #FF55FF;
+  float: right;
+  margin-right: 20px;
+}

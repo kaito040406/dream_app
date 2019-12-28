@@ -28,3 +28,6 @@ Route::group(['middleware' => 'auth'], function() {
   Route::resource('users.contents', 'ContentController');
   Route::get('/users/{user}/contents/{content}/delete', 'ContentController@delete');
 });
+
+Route::get('/ajax/get_json', function(){ return view('develop.ajax_get_json'); });
+Route::get('/api/ajax/get_json', 'UranaiController@ajax_get_json');

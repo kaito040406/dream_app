@@ -7,8 +7,10 @@
     <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
     <link rel="apple-touch-icon" sizes="180x180" href="images/android-chrome-72x72.png">
     <title>Dream Diary</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="{{ asset('js/diagnosis.js') }}"></script>
     <link href="https://fonts.googleapis.com/css?family=Alegreya+Sans+SC:300 rel="stylesheet">
-    <link href="css/_reset.scss" rel="stylesheet" type="text/css">
+    <!-- <link href="css/_reset.scss" rel="stylesheet" type="text/css"> -->
     <link href="{{ asset('css/mainpage.css') }}" rel="stylesheet">
     <link href="{{ asset('css/per_page.css') }}" rel="stylesheet">
   </head>
@@ -123,6 +125,12 @@
                             <a href="/users/{{$user->id}}/contents/{{$content->id}}/delete" method="get">
                               <img src="/images/namagomi.png" alt="inu" class="content_edit_image" width="50" height="45">
                               <div class="edit_content">削除</div>
+                            </a><br />
+                          </div>
+                          <div class="content_diagnosis_button" id="{{$content->id}}">
+                            <a>
+                              <img src="/images/namagomi.png" alt="inu" class="content_edit_image" width="50" height="45">
+                              <div class="edit_content">診断</div>
                             </a><br />
                           </div>
                         </div>
