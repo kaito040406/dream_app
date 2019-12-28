@@ -11,12 +11,12 @@ $(function(){
     })
     .done(function(data){
       console.log(data.text[0].body);
-      var test = "親譲りの無鉄砲で小供の時から損ばかりしている"
+      var try_date = data.text[0].body
       kuromoji.builder({ dicPath: "/dict" }).build(function(err, tokenizer){
         if(err){
           console.log(err);
         } else {
-          var tokens = tokenizer.tokenize(test);
+          var tokens = tokenizer.tokenize(try_date);
           console.log(tokens);
         }
       });
