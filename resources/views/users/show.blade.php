@@ -7,8 +7,10 @@
     <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
     <link rel="apple-touch-icon" sizes="180x180" href="images/android-chrome-72x72.png">
     <title>Dream Diary</title>
+    <!-- <script src="kuromoji.js"></script> -->
+    <script type="module" src="{{ asset('js/kuromoji.js') }}"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-    <script type="text/javascript" src="{{ asset('js/diagnosis.js') }}"></script>
+    <script type="module" src="{{ asset('js/diagnosis.js') }}"></script>
     <link href="https://fonts.googleapis.com/css?family=Alegreya+Sans+SC:300 rel="stylesheet">
     <!-- <link href="css/_reset.scss" rel="stylesheet" type="text/css"> -->
     <link href="{{ asset('css/mainpage.css') }}" rel="stylesheet">

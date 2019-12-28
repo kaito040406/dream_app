@@ -1,6 +1,8 @@
+import './kuromoji.js';
+
 $(function(){
   $(".content_diagnosis_button").on('click',function(){
-    diary_id = $(this).attr("id")
+    var diary_id = $(this).attr("id")
     $.ajax({
       url: '/api/ajax/get_json',
       type: 'get',
@@ -9,9 +11,10 @@ $(function(){
     })
     .done(function(data){
       console.log(data.text[0].body)
+
     })
     .fail(function(){
-      console.log("失敗")
+      console.log("メッセージ取得失敗")
     })
   })
 })

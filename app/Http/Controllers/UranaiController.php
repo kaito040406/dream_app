@@ -20,4 +20,8 @@ class UranaiController extends Controller
         $return_data = json_encode($json);
         return $json;
     }
+
+    public function ajax_get_uranai(Request $requests) {
+        
+    }
 }

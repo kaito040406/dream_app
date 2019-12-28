@@ -21,6 +21,9 @@
         "react-dom": "^15.4.2"
     },
     "dependencies": {
-        "request": "^2.88.0"
+        "@types/kuromoji": "^0.1.0",
+        "kuromoji": "^0.1.2",
+        "request": "^2.88.0",
+        "uniq": "^1.0.1"
     }
 }
