@@ -44,7 +44,6 @@ class UranaiController extends Controller
     public function ajax_post_json(Request $request) {
         $content = Graph::where('content_id', $request->content_id)->get();
         $cnt = count($content);
-        Log::debug($cnt);
         if ($cnt == 0){
             $user = Auth::user();
             $input_data = new Graph;
