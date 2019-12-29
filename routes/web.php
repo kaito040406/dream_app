@@ -32,3 +32,4 @@ Route::group(['middleware' => 'auth'], function() {
 Route::get('/ajax/get_json', function(){ return view('develop.ajax_get_json'); });
 Route::get('/api/ajax/get_json', 'UranaiController@ajax_get_json');
 Route::post('/api/ajax/get_uranai', 'UranaiController@ajax_get_uranai');
+Route::post('/api/ajax/make_graph', 'UranaiController@ajax_post_json');

@@ -58,6 +58,19 @@ $(function(){
             })
             var ave = sum_point / k;
             console.log(ave);
+            $.ajax({
+              url: '/api/ajax/make_graph',
+              type: 'post',
+              headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
+              dataType: 'json',
+              data: {
+                content_id: diary_id,
+                ave:  ave
+              }, '_method': 'POST'
+            })
+            .done(function(data){
+              console.log(data.message)
+            })
           })
         }
       })

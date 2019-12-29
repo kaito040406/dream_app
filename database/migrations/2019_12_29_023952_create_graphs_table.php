@@ -17,6 +17,7 @@ class CreateGraphsTable extends Migration
             $table->increments('id');
             $table->string('element_point');
             $table->string('user_id');
+            $table->string('content_id');
             $table->timestamps();
         });
     }
