@@ -230,13 +230,13 @@ body{
   top: 160px;
   background-color: blanchedalmond;
   border-radius: 5px;
-  border: 3px solid #FF55FF;
+  border: 3px solid #003366;
 }
 
 
 
 #canvas{
-  margin-left: 170px;
+  margin-left: 220px;
   background-color: #EDFFBE;
   border-radius: 5px;
   box-shadow: 1px 1px 2px gray;
@@ -245,6 +245,14 @@ body{
 .close_button{
   height: 30px;
   width: 30px;
-  background-color: crimson;
+  background-color: #003366;
   position: relative;
+  color: #EDFFBE;
 }
+.close_text{
+  text-align: center;
+  position: relative;
+  font-size:28px;
+  bottom: 10px;
+}
+
