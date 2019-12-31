@@ -23,6 +23,7 @@
     "dependencies": {
         "@types/kuromoji": "^0.1.0",
         "kuromoji": "^0.1.2",
+        "moment": "^2.24.0",
         "request": "^2.88.0",
         "uniq": "^1.0.1"
     }

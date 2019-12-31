@@ -67,7 +67,7 @@ class UranaiController extends Controller
         
         $user = User::find($request->id);
         $current_user = Auth::user();
-        // Log::debug($user);
+        
         if($user->id == $current_user->id){
             $elemets_data = Graph::where('user_id', $user->id)->get();
             $json = array(

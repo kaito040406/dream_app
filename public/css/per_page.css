@@ -228,4 +228,23 @@ body{
   height: 600px;
   left: 225px;
   top: 160px;
+  background-color: blanchedalmond;
+  border-radius: 5px;
+  border: 3px solid #FF55FF;
+}
+
+
+
+#canvas{
+  margin-left: 170px;
+  background-color: #EDFFBE;
+  border-radius: 5px;
+  box-shadow: 1px 1px 2px gray;
+}
+
+.close_button{
+  height: 30px;
+  width: 30px;
+  background-color: crimson;
+  position: relative;
 }
