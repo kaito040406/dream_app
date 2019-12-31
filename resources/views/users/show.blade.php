@@ -8,12 +8,12 @@
     <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
     <link rel="apple-touch-icon" sizes="180x180" href="images/android-chrome-72x72.png">
     <title>Dream Diary</title>
-    <!-- <script src="kuromoji.js"></script> -->
     <script type="module" src="{{ asset('js/kuromoji.js') }}"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script type="module" src="{{ asset('js/diagnosis.js') }}"></script>
     <link href="https://fonts.googleapis.com/css?family=Alegreya+Sans+SC:300 rel="stylesheet">
-    <!-- <link href="css/_reset.scss" rel="stylesheet" type="text/css"> -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.js"></script>
+    <script type="module" src="{{ asset('js/graph.js') }}"></script>
     <link href="{{ asset('css/mainpage.css') }}" rel="stylesheet">
     <link href="{{ asset('css/per_page.css') }}" rel="stylesheet">
   </head>
@@ -29,7 +29,7 @@
           </a>
         </div>
             <div class = "par_button">
-              <div class = "user_name_box">
+              <div class = "user_name_box" id = "{{$user->id}}">
                 <a>{{$user->name}}さんのマイページ</a>
               </div>
               <div class = "logout_box">
@@ -74,7 +74,7 @@
                   </a><br />
                 </div>
                 <div class="likes_box">
-                  <a href="" method="get">
+                  <a>
                     <img src="/images/illust3199.png" alt="inu" class="per_image" width="75" height="75">
                       <div class="new_content">お気に入り</div>
                   </a><br />
@@ -93,6 +93,10 @@
                 </div>
               </div>
             </div>
+
+            <div class="graph">
+            </div>
+
             <div class = "content_zone">
               <div class="content_box">
                 <div class="list_title">

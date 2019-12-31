@@ -57,7 +57,6 @@ $(function(){
               sum_point = sum_point + suji;
             })
             var ave = sum_point / k;
-            console.log(ave);
             $.ajax({
               url: '/api/ajax/make_graph',
               type: 'post',
@@ -69,7 +68,7 @@ $(function(){
               }, '_method': 'POST'
             })
             .done(function(data){
-              console.log(data.message)
+              alert(data.message)
             })
           })
         }

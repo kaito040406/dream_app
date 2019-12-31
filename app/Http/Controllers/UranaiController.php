@@ -52,14 +52,35 @@ class UranaiController extends Controller
             $input_data->content_id = $request->content_id;
             $input_data->save();
             $json = array(
-                "message" => "登録完了"
+                "message" => "診断完了です"
             );
         }
         else{
             $json = array(
-                "message" => "登録済み"
+                "message" => "診断済みです"
             );
         }
+        return $json;
+    }
+
+    public function ajax_graph_json(Request $request){
+        
+        $user = User::find($request->id);
+        $current_user = Auth::user();
+        // Log::debug($user);
+        if($user->id == $current_user->id){
+            $elemets_data = Graph::where('user_id', $user->id)->get();
+            $json = array(
+                "message" => "取得成功",
+                "data" => $elemets_data
+            );
+        }
+        else{
+            $json = array(
+                "message" => "エラー"
+            );
+        }
+        
         return $json;
     }
 }

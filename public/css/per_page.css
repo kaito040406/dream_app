@@ -221,3 +221,11 @@ body{
   float: right;
   margin-right: 20px;
 }
+
+.graph_in{
+  position: fixed;
+  width: 1000px;
+  height: 600px;
+  left: 225px;
+  top: 160px;
+}

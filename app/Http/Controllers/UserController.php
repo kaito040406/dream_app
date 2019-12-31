@@ -145,4 +145,8 @@ class UserController extends Controller
     {
         //
     }
+
+    public function ajax_get_user(Request $request) {
+
+    }
 }
