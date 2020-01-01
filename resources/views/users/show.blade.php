@@ -76,7 +76,7 @@
                 <div class="likes_box">
                   <a>
                     <img src="/images/illust3199.png" alt="inu" class="per_image" width="75" height="75">
-                      <div class="new_content">お気に入り</div>
+                      <div class="new_content">診断結果</div>
                   </a><br />
                 </div>
                 <div class="user_logout_box">
@@ -95,6 +95,9 @@
             </div>
 
             <div class="graph">
+            </div>
+
+            <div class="load">
             </div>
 
             <div class = "content_zone">

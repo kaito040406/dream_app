@@ -6,6 +6,15 @@ $(function(){
     if(st == 1){
 
     }else{
+      var load_html = `
+                      <div class="graph_in" id = "1">
+                        <div class="load_text">
+                          計算中だよ!!
+                        </div>
+                      </div>
+                      `
+      $(".load").append(load_html);
+      $(".graph_in").show(300);
       var diary_id = $(this).attr("id")
       $.ajax({
         url: '/api/ajax/get_json',
@@ -75,6 +84,10 @@ $(function(){
                 }, '_method': 'POST'
               })
               .done(function(data){
+                $(".graph_in").hide(300);
+                  setTimeout(() => {
+                    $(".load").empty();
+                  }, 400);
                 alert(data.message)
               })
             })
