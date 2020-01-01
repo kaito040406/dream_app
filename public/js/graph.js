@@ -51,11 +51,13 @@ $(function(){
         // console.log(datas.data)
         var create_day=[];
         var point = [];
+        var day_point = [];
         var i = 0
         datas.data.forEach(function(point_data){
           var change_data = point_data.created_at.slice( 0, -9 )
           var chage_data2 = change_data.slice(5, 12)
           create_day[i] = chage_data2
+          day_point[i] = Number(point_data.element_point)
           if(i == 0){
             point[i] = Number(point_data.element_point)
           }
@@ -65,6 +67,15 @@ $(function(){
           i = i + 1
         })
         if(datas.message == "取得成功"){
+          var day_point_count = day_point.length
+          if(day_point_count >= 7){
+            var day_point_last = day_point.slice(day_point_count-7, day_point_count)
+            var day_create_last = create_day.slice(day_point_count-7, day_point_count)
+          }else{
+            var day_point_last = day_point
+            var day_create_last = create_day
+          }
+          
           var sum_data  = point.slice(-1)[0] * 10;
           sum_data = Math.round(sum_data);
           sum_data = sum_data / 10;
@@ -129,16 +140,14 @@ $(function(){
 
           
           window.myChart = new Chart(ctx_bar, {
-            type: 'line',
+            type: 'bar',
             data: {
-              labels: create_day,
+              labels: day_create_last,
               datasets:[{
                 label: '累計データ',
-                data: point,
-                backgroundColor: 'rgba(60, 160, 220, 0.3)',
+                data: day_point_last,
+                backgroundColor: 'rgba(60, 160, 220, 0.8)',
                 borderColor: '#000080',
-                fill: false,
-                borderDash: [8, 2],
               }],
             },
             options: {
@@ -157,17 +166,24 @@ $(function(){
                     fontSize: 20                
                 },
                 }],
-                yAxes:[{
-                  ticks:{
-                    min:-20,
-                    max:20,
-                    fontSize: 20  
+                xAxes: [{                  
+                  display: true,             
+                  barPercentage: 0.4,       
+                  categoryPercentage: 0.4,     
+                  scaleLabel: {             
+                     display: true,           
+                     fontSize: 18              
                   },
+                  ticks: {
+                      fontSize: 18          
+                  },
+                }],
+                yAxes:[{
                   scaleLabel: {   
                     display: true,               
-                    labelString: '累計ポイント', 
+                    labelString: 'ポイント', 
                     fontSize: 20                  
-                },
+                  },
                 }],
               }
             }
