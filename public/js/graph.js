@@ -70,9 +70,11 @@ $(function(){
           var day_point_count = day_point.length
           if(day_point_count >= 7){
             var day_point_last = day_point.slice(day_point_count-7, day_point_count)
+            var sum_point_last = point.slice(day_point_count-7, day_point_count)
             var day_create_last = create_day.slice(day_point_count-7, day_point_count)
           }else{
             var day_point_last = day_point
+            var sum_point_last = point
             var day_create_last = create_day
           }
           
@@ -96,10 +98,10 @@ $(function(){
           window.myChart = new Chart(ctx, {
             type: 'line',
             data: {
-              labels: create_day,
+              labels: day_create_last,
               datasets:[{
                 label: '累計データ',
-                data: point,
+                data: sum_point_last,
                 backgroundColor: 'rgba(60, 160, 220, 0.3)',
                 borderColor: '#FF9900',
                 fill: false,
@@ -119,7 +121,8 @@ $(function(){
                   scaleLabel: {                 
                     display: true,            
                     labelString: '',  
-                    fontSize: 20                
+                    fontSize: 20,
+                    labelString: 'クリックでグラフ変更ができます',                  
                 },
                 }],
                 yAxes:[{
@@ -172,13 +175,17 @@ $(function(){
                   categoryPercentage: 0.4,     
                   scaleLabel: {             
                      display: true,           
-                     fontSize: 18              
+                     fontSize: 20,
+                     labelString: 'クリックでグラフ変更ができます',            
                   },
                   ticks: {
                       fontSize: 18          
                   },
                 }],
                 yAxes:[{
+                  ticks:{
+                    fontSize: 20  
+                  },
                   scaleLabel: {   
                     display: true,               
                     labelString: 'ポイント', 
