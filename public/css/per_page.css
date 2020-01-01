@@ -223,13 +223,14 @@ body{
 }
 
 .graph_in{
+  display: none;
   position: fixed;
   width: 1000px;
   height: 600px;
   left: 225px;
   top: 160px;
   background-color: blanchedalmond;
-  border-radius: 5px;
+  border-radius: 20px;
   border: 3px solid #003366;
 }
 
@@ -248,11 +249,70 @@ body{
   background-color: #003366;
   position: relative;
   color: #EDFFBE;
+  border-radius: 20px;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 1px;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 1px;
 }
 .close_text{
   text-align: center;
   position: relative;
   font-size:28px;
   bottom: 10px;
+}
+
+.open_data{
+  position: relative;
+  height:330px;
+  width:180px;
+  background-color: #FFEEFF;
+  border: 3px solid #FF55FF;
+  border-radius: 20px;
+  left:20px;
+}
+
+.open_text_introduction{
+  text-align: center;
+  color: black;
+  font-size: 20px;
+  margin-top:20px;
+}
+
+.open_text_data_text{
+  text-align: center;
+  color: black;
+  font-size: 60px;
+  margin-top:60px;
+}
+
+.azarashi_box{
+  position: relative;
+  left:750px;
+  bottom: 70px;
+}
+
+.azarashi_text_box{
+  position: relative;
+  top:20px;
+  left:90px;
+  background-color: #CCFFFF;
+  border-radius: 20px;
+  border: 3px solid #00FFFF;
+  display:inline-block;
+}
+.azarashi_text{
+  font-size:24px;
+  padding:15px;
+}
+
+.azarashi_text_box:before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  margin-top: -15px;
+  border: 15px solid transparent;
+  border-left: 15px solid #00FFFF;
 }
 

@@ -3,7 +3,10 @@ $(function(){
   $(".likes_box").on('click',function(){
     var st = $(".graph_in").attr("id");
     if(st == 1){
-      $(".graph_in").remove();
+      $(".graph_in").hide(300);
+      setTimeout(() => {
+        $(".graph").empty();
+      }, 400);
     }else{
       var user_id = $(".user_name_box").attr("id");
       var html = `<div class="graph_in" id="1">
@@ -19,7 +22,17 @@ $(function(){
                           <canvas id="canvas"></canvas>
                       </div>
                     </div>
-                  </div>` 
+                    <div class="azarashi_text_box">
+                      <div class="azarashi_text">
+                        合計値がプラスになっているといいことが起こる夢だよ<br>
+                        マイナスになるとやばいよ！！！
+                      </div>
+                    </div>
+                    <div class="azarashi_box">
+                      <img src="/images/azarashi-shirokuro.png" alt="inu" class="per_image" width="130" height="130">
+                    </div>
+                  </div>
+                  ` 
       $('.graph').append(html);
       $.ajax({
         url: '/api/ajax/graph',
@@ -45,13 +58,21 @@ $(function(){
           i = i + 1
         })
         if(datas.message == "取得成功"){
+          var sum_data  = point.slice(-1)[0] * 10;
+          sum_data = Math.round(sum_data);
+          sum_data = sum_data / 10;
           var open_data_html = `
                                 <div class="open_text_data">
-                                  ${point[i]}
+                                  <div class="open_text_introduction">
+                                    あたなの合計値は
+                                  </div>
+                                  <div class="open_text_data_text">
+                                    ${sum_data}
+                                  <div>
                                 </div>
                                 `
-
-
+          $('.open_data').append(open_data_html);
+          $(".graph_in").show(300);
           var ctx = document.getElementById('canvas').getContext('2d');
           window.myChart = new Chart(ctx, {
             type: 'line',
@@ -106,6 +127,9 @@ $(function(){
     
   })
   $(document).on('click', '.close_button', function(e){
-    $(".graph_in").remove();
+    $(".graph_in").hide(300);
+    setTimeout(() => {
+      $(".graph").empty();
+  }, 400);
   })
 })
