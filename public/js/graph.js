@@ -17,9 +17,16 @@ $(function(){
                       <div class="open_data">
                       </div>
                     </div>
-                    <div class=graph_box>
-                      <div style="width:75%">
+                    <div class="graph_box">
+                      <div class="line">
+                        <div style="width:75%">
                           <canvas id="canvas"></canvas>
+                        </div>
+                      </div>
+                      <div class="bar">
+                        <div style="width:75%">
+                          <canvas id="canvas_bar"></canvas>
+                        </div>
                       </div>
                     </div>
                     <div class="azarashi_text_box">
@@ -74,6 +81,7 @@ $(function(){
           $('.open_data').append(open_data_html);
           $(".graph_in").show(300);
           var ctx = document.getElementById('canvas').getContext('2d');
+          var ctx_bar = document.getElementById('canvas_bar').getContext('2d');
           window.myChart = new Chart(ctx, {
             type: 'line',
             data: {
@@ -118,6 +126,53 @@ $(function(){
               }
             }
           });
+
+          
+          window.myChart = new Chart(ctx_bar, {
+            type: 'line',
+            data: {
+              labels: create_day,
+              datasets:[{
+                label: '累計データ',
+                data: point,
+                backgroundColor: 'rgba(60, 160, 220, 0.3)',
+                borderColor: '#000080',
+                fill: false,
+                borderDash: [8, 2],
+              }],
+            },
+            options: {
+              legend: {
+                display: false
+              },
+              scales:{
+                xAxes:[{
+                  ticks:{
+                    min:0,
+                    fontSize: 20  
+                  },
+                  scaleLabel: {                 
+                    display: true,            
+                    labelString: '',  
+                    fontSize: 20                
+                },
+                }],
+                yAxes:[{
+                  ticks:{
+                    min:-20,
+                    max:20,
+                    fontSize: 20  
+                  },
+                  scaleLabel: {   
+                    display: true,               
+                    labelString: '累計ポイント', 
+                    fontSize: 20                  
+                },
+                }],
+              }
+            }
+          });
+          
         }
       })
       .fail(function(){
@@ -130,6 +185,17 @@ $(function(){
     $(".graph_in").hide(300);
     setTimeout(() => {
       $(".graph").empty();
-  }, 400);
+    }, 400);
   })
+
+  $(document).on('click', '#canvas', function(e){
+    $(".line").hide(300);
+    $(".bar").show(300);
+  })
+
+  $(document).on('click', '#canvas_bar', function(e){
+    $(".bar").hide(300);
+    $(".line").show(300);
+  })
+
 })
