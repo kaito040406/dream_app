@@ -15,10 +15,20 @@ class ContentController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($id)
     {
+        $check_user = User::find($id);
+        $now_user = Auth::user();
+        if($check_user == null){
+            return redirect()->action('ContentController@index', ['id' => $now_user->id]);
+        }
+        elseif($check_user->$id == $now_user->$id){
+            $user = $check_user;
+        }
+        else{
+            return redirect()->action('ContentController@index', ['id' => $now_user->id]);
+        }
         $contents = Content::all();
-        $user = Auth::user();
         $params = [
             'user' => $user,
             'content' => $contents,
@@ -46,10 +56,8 @@ class ContentController extends Controller
     {
         $content = new Content;
         $form = $request->all();
-
-        // 最低限なバリデーション処理です。ここでは特に説明はしません。
         $rules = [
-            'user_id' => 'integer|required', // 2項目以上条件がある場合は「 | 」を挟む
+            'user_id' => 'integer|required',
             'title' => 'required',
             'body' => 'required',
         ];
@@ -94,8 +102,23 @@ class ContentController extends Controller
      */
     public function edit($user_id, $content_id)
     {
+        $check_user = User::find($user_id);
+        $now_user = Auth::user();
         $content = Content::find($content_id);
-        $user = Auth::user();
+        if($check_user == null){
+            return redirect()->action('ContentController@edit', ['user_id' => $now_user->id, 'content_id' => $content_id]);
+        }
+        elseif($check_user == $now_user){
+            $user = $check_user;
+        }
+        else{
+            return redirect()->action('ContentController@edit', ['user_id' => $now_user->id, 'content_id' => $content_id]);
+        }
+
+        if($content->user_id != $user->id){
+            return redirect()->action('UserController@show', ['id' => $now_user->id]);
+        }
+
         $params = [
             'user' => $user,
             'content' => $content,
@@ -114,10 +137,8 @@ class ContentController extends Controller
     {
         $content = Content::find($content_id);
         $form = $request->all();
-
-        // 最低限なバリデーション処理です。ここでは特に説明はしません。
         $rules = [
-            'user_id' => 'integer|required', // 2項目以上条件がある場合は「 | 」を挟む
+            'user_id' => 'integer|required',
             'title' => 'required',
             'body' => 'required',
         ];
@@ -151,15 +172,46 @@ class ContentController extends Controller
      */
     public function destroy($user_id, $content_id)
     {
+        $check_user = User::find($user_id);
+        $now_user = Auth::user();
         $content = Content::find($content_id);
+        
+        if($check_user == null){
+            return redirect()->action('UserController@show', ['id' => $now_user->id]);
+        }
+        elseif($check_user == $now_user){
+            $user = $check_user;
+        }
+        else{
+            return redirect()->action('UserController@show', ['id' => $now_user->id]);
+        }
+        if($content->user_id != $user->id){
+            return redirect()->action('UserController@show', ['id' => $now_user->id]);
+        }
+
         $content->delete();
         return redirect("/users/$user_id");
     }
 
     public function delete($user_id, $content_id)
     {
+        $check_user = User::find($user_id);
+        $now_user = Auth::user();
         $content = Content::find($content_id);
-        $user = Auth::user();
+        
+        if($check_user == null){
+            return redirect()->action('ContentController@delete', ['user_id' => $now_user->id, 'content_id' => $content_id]);
+        }
+        elseif($check_user == $now_user){
+            $user = $check_user;
+        }
+        else{
+            return redirect()->action('ContentController@delete', ['user_id' => $now_user->id, 'content_id' => $content_id]);
+        }
+        if($content->user_id != $user->id){
+            return redirect()->action('UserController@show', ['id' => $now_user->id]);
+        }
+
         $params = [
             'user' => $user,
             'content' => $content,

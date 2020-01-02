@@ -51,7 +51,17 @@ class UserController extends Controller
      */
     public function show($id)
     {
-        $user = User::find($id);
+        $check_user = User::find($id);
+        $now_user = Auth::user();
+        if($check_user == null){
+            return redirect()->action('UserController@show', ['id' => $now_user->id]);
+        }
+        elseif($check_user->$id == $now_user->$id){
+            $user = $check_user;
+        }
+        else{
+            return redirect()->action('UserController@show', ['id' => $now_user->id]);
+        }
         $contents = Content::where('user_id', $id)->get();
         $contents_count = count($contents);
         $params = [
@@ -59,7 +69,6 @@ class UserController extends Controller
             'contents' => $contents, 
             'contents_count' => $contents_count
         ];
-
         return view('users.show', $params);
     }
 
@@ -70,11 +79,20 @@ class UserController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
-    {
-        $user = User::find($id);
+    {   
+        $check_user = User::find($id);
+        $now_user = Auth::user();
+        if($check_user == null){
+            return redirect()->action('UserController@edit', ['id' => $now_user->id]);
+        }
+        elseif($check_user == $now_user){
+            $user = $check_user;
+        }
+        else{
+            return redirect()->action('UserController@edit', ['id' => $now_user->id]);
+        }
         return view('users.edit', ['user' => $user]);
     }
-
     /**
      * Update the specified resource in storage.
      *
@@ -84,7 +102,6 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
-
         $user = User::find($id);
         $form = $request->all();
 
