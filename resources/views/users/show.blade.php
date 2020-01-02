@@ -8,13 +8,15 @@
     <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
     <link rel="apple-touch-icon" sizes="180x180" href="images/android-chrome-72x72.png">
     <title>Dream Diary</title>
-    <script type="module" src="{{ asset('js/kuromoji.js') }}"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jscroll/2.3.9/jquery.jscroll.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jscroll/2.4.1/jquery.jscroll.min.js"></script>
+    <script src="https://unpkg.com/infinite-scroll@3/dist/infinite-scroll.pkgd.min.js"></script>
+    <script type="module" src="{{ asset('js/kuromoji.js') }}"></script>
     <script type="module" src="{{ asset('js/diagnosis.js') }}"></script>
     <link href="https://fonts.googleapis.com/css?family=Alegreya+Sans+SC:300 rel="stylesheet">
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.js"></script>
     <script type="module" src="{{ asset('js/graph.js') }}"></script>
+    <script type="module" src="{{ asset('js/scroll.js') }}"></script>
     <link href="{{ asset('css/mainpage.css') }}" rel="stylesheet">
     <link href="{{ asset('css/per_page.css') }}" rel="stylesheet">
   </head>

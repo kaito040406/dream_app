@@ -70,7 +70,7 @@ class UserController extends Controller
         $params = [
             'user' => $user,
             'contents' => $contents, 
-            'contents_count' => $contents_count
+            'contents_count' => compact($contents_count)
         ];
         return view('users.show', $params);
     }
