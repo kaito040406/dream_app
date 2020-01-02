@@ -62,7 +62,8 @@ class UserController extends Controller
         else{
             return redirect()->action('UserController@show', ['id' => $now_user->id]);
         }
-        $contents = Content::where('user_id', $id)->get();
+        $contents_all = Content::where('user_id', $id)->get();
+        $contents = $contents_all->sortByDesc('created_at');
         $contents_count = count($contents);
         $params = [
             'user' => $user,
