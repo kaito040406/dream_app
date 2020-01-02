@@ -11,6 +11,12 @@ class TopController extends Controller
     public function index()
     {
         $user = Auth::user();
-        return view('toppages.index', ['user' => $user]);
+        if (Auth::check()) {
+            return redirect()->action('UserController@show', ['id' => $user->id]);
+        }
+        else{
+            return redirect()->route('login');
+            // return view('toppages.index', ['user' => $user]);
+        }
     }
 }

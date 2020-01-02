@@ -17,9 +17,6 @@
 
 Auth::routes();
 Route::get('/', 'TopController@index');
-// Route::get('/', function () {
-//   return view('test');
-// });
 
 
 
