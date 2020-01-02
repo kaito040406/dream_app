@@ -87,6 +87,7 @@ body{
   border-radius: 5px;
   border: 3px solid #FF55FF;
   float: left;
+  cursor : pointer;
 }
 
 .likes_box:hover {
@@ -220,6 +221,7 @@ body{
   border: 3px solid #FF55FF;
   float: right;
   margin-right: 20px;
+  cursor : pointer;
 }
 
 .graph_in{

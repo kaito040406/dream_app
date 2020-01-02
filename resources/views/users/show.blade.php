@@ -139,7 +139,7 @@
                           </div>
                           <div class="content_diagnosis_button" id="{{$content->id}}">
                             <a>
-                              <img src="/images/namagomi.png" alt="inu" class="content_edit_image" width="50" height="45">
+                              <img src="/images/613.png" alt="inu" class="content_edit_image" width="50" height="45">
                               <div class="edit_content">診断</div>
                             </a><br />
                           </div>
