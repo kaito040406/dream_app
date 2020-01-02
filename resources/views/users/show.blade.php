@@ -10,6 +10,7 @@
     <title>Dream Diary</title>
     <script type="module" src="{{ asset('js/kuromoji.js') }}"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jscroll/2.3.9/jquery.jscroll.js"></script>
     <script type="module" src="{{ asset('js/diagnosis.js') }}"></script>
     <link href="https://fonts.googleapis.com/css?family=Alegreya+Sans+SC:300 rel="stylesheet">
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.js"></script>
@@ -146,6 +147,7 @@
                         </div>
                       </div>
                     @endforeach
+                    {{$contents->links()}}
                   @else
                     <div class="content_title">
                       日記はまだありません
