@@ -61,9 +61,7 @@ class UranaiController extends Controller
             }
         }
         
-        
         if($selects_uranai_changed != "no_data"){
-            
             foreach($test as $duplication_check){
                 $pre_export[$i] = $duplication_check;
                 $per_edit_export[$i] = $pre_export[$i];
@@ -83,9 +81,6 @@ class UranaiController extends Controller
                 }
                 $i = $i + 1;
             }
-        }
-        elseif($selects_uranai_changed[0] == "{ "){
-            $export[] = ["no_data"];
         }
         else{
             $export[] = ["no_data"];
