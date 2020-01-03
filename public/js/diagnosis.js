@@ -60,6 +60,7 @@ $(function(){
                 dream_data[i] = dream
                 i=i+1
               })
+              // console.log(dream_data[0]);
               var dream_data_set = new Set(dream_data)
               dream_data_set.forEach(function(point){
                 k = k + 1;
@@ -69,7 +70,11 @@ $(function(){
               if(k == 0){
                 var ave = 0;
               }else{
-                var ave = sum_point / k;
+                if(dream_data[0] == "no_data"){
+                  var ave = 0;
+                }else{
+                  var ave = sum_point / k;
+                }
               }
               $.ajax({
                 url: '/api/ajax/make_graph',
@@ -82,7 +87,7 @@ $(function(){
                 }, '_method': 'POST'
               })
               .done(function(data){
-                $(".load").hide(300);
+                $(".graph_in").hide(300);
                   setTimeout(() => {
                     $(".load").empty();
                   }, 400);

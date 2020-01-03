@@ -63,7 +63,7 @@ class UserController extends Controller
             return redirect()->action('UserController@show', ['id' => $now_user->id]);
         }
         // $contents_all = Content::where('user_id', $id)->sortByDesc('created_at')->paginate(4)->get();
-        $contents_all = Content::orderBy('created_at', 'desc')->paginate(4);
+        $contents_all = Content::orderBy('created_at', 'desc')->paginate(30);
         // $contents = $contents_all->sortByDesc('created_at')->paginate(4);
         $contents = $contents_all;
         $contents_count = count($contents);
