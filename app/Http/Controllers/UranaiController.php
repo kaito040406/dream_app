@@ -25,17 +25,51 @@ class UranaiController extends Controller
 
     public function ajax_get_uranai(Request $request) {
         $selects_uranai = array();
+        $export = array();
+        $pre_export = array();
+        $per_edit_export = array();
+        $i = 0;
+        $k = 0;
         foreach($request->check_texts as $request_data){
             if($request_data=='夢'){
             }elseif($request_data=='見'){
             }else{
-                $select_uranai = Uranai::where('title', 'LIKE' , "%$request_data%")->get();
-                $selects_uranai[] = $select_uranai;
+                // $select_uranai[] = Uranai::where('title', 'LIKE' , "%$request_data%")->get();
+                // $selects_uranai[] = $select_uranai[];
+                $selects_uranai[] = Uranai::where('title', 'LIKE' , "%$request_data%")->get();
             }
-            
         }
+
+        foreach($selects_uranai as $change_step1){
+            foreach($change_step1 as $change_step2){
+                $selects_uranai_changed[$k] = $change_step2;
+                $k = $k + 1;
+            }
+        }
+        
+        foreach($selects_uranai_changed as $duplication_check){
+            $pre_export[$i] = $duplication_check;
+            $per_edit_export[$i] = $pre_export[$i];
+            if($i == 0 or $i == 1){
+            }
+            else{
+                $cnt = count($pre_export);
+                $cnt2 = $cnt - 1;
+                $esc = $per_edit_export[$i];
+                unset($per_edit_export[$i]);
+                foreach($per_edit_export as $post_export){
+                    if($post_export->id == $duplication_check->id){
+                        Log::debug($duplication_check->id);
+                        $export[] = $duplication_check;
+                    }
+                }
+                $per_edit_export[$i] = $pre_export[$i];
+            }
+            $i = $i + 1;
+        }
+
         $json = array(
-            "hit_dreams" => $selects_uranai,
+            "hit_dreams" => $export,
         );
         $return_data = json_encode($json);
         return $json;
@@ -57,7 +91,7 @@ class UranaiController extends Controller
         }
         else{
             $json = array(
-                "message" => "診断済みです"
+                "message" => $request->ave
             );
         }
         return $json;
