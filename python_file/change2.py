@@ -4,10 +4,11 @@ import time
 import re
 
 
-with open('export4.csv') as f:
+with open('export8.csv') as f:
   reader = csv.reader(f)
   for row in reader:
-    with open('export5.csv', 'a') as e:
-      print(row[1] + ',' + row[2] + ',' + row[3] + ',', file=e)
+    with open('export9.csv', 'a') as e:
+      edit = int(row[3])-3
+      print(row[1] + ',' + row[2] + ',' + str(edit) + ',', file=e)
       e.close()
   f.close()

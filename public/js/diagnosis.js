@@ -56,6 +56,8 @@ $(function(){
               var i = 0;
               var k = 0;
               var sum_point = 0;
+              console.log("ok");
+              console.log(dreams);
               dreams.hit_dreams.forEach(function(dream){
                 dream_data[i] = dream
                 i=i+1

@@ -3,7 +3,7 @@ import pprint
 import time
 import re
 
-with open('uranai.csv') as f:
+with open('export7.csv') as f:
   reader = csv.reader(f)
   for row in reader:
     print(row[1])
@@ -27,7 +27,7 @@ with open('uranai.csv') as f:
         i = i +1
         # time.sleep(0.02)
       c.close()
-    with open('export.csv', 'a') as e:
+    with open('export8.csv', 'a') as e:
       print(str(row[0]) + ',' + str(row[1]) + ',' + str(row[2]) + ',' , file=e)
       e.close()
   f.close()
