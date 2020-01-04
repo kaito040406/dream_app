@@ -56,13 +56,24 @@ $(function(){
               var i = 0;
               var k = 0;
               var sum_point = 0;
-              console.log("ok");
-              console.log(dreams);
-              dreams.hit_dreams.forEach(function(dream){
-                dream_data[i] = dream
-                i=i+1
-              })
-              // console.log(dream_data[0]);
+              if(dreams.message == "meny"){
+                dreams.hit_dreams.forEach(function(dream){
+                  if(dream.length == null){
+                    dream_data[i] = dream
+                    i=i+1
+                  }
+                })
+              }else{
+                if(dreams.message == "solo"){
+                  dreams.hit_dreams.forEach(function(dream){
+                    dream.forEach(function(d_d){
+                      dream_data[i] = d_d
+                      i=i+1
+                    })
+                  })
+                }
+              }
+              console.log(dream_data)
               var dream_data_set = new Set(dream_data)
               dream_data_set.forEach(function(point){
                 k = k + 1;
@@ -93,7 +104,7 @@ $(function(){
                   setTimeout(() => {
                     $(".load").empty();
                   }, 400);
-                // alert(data.message)
+                console.log(data)
 
 
 
