@@ -34,7 +34,7 @@ num_count = 0
 # ave = sum / i
 # print(ave)
 for count in range(-30, 30):
-  with open('export6.csv') as f:
+  with open('export13.csv') as f:
     reader = csv.reader(f)
     for row in reader:
       if str(count) in row[2]:
