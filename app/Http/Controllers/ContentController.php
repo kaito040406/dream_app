@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 use App\User;
 use App\Content;
+use App\Graph;
 use Validator;
 class ContentController extends Controller
 {
@@ -136,6 +137,7 @@ class ContentController extends Controller
     public function update(Request $request, $id, $content_id)
     {
         $content = Content::find($content_id);
+        $graph_data = Graph::where('content_id',$content_id);
         $form = $request->all();
         $rules = [
             'user_id' => 'integer|required',
@@ -160,8 +162,11 @@ class ContentController extends Controller
             $content->title = $request->title;
             $content->body = $request->body;
             $content->save();
+            $graph_data ->delete();
             return redirect("/users/$id");
         }
+
+
     }
 
     /**
@@ -175,6 +180,7 @@ class ContentController extends Controller
         $check_user = User::find($user_id);
         $now_user = Auth::user();
         $content = Content::find($content_id);
+        $graph_data = Graph::where('content_id',$content_id);
         
         if($check_user == null){
             return redirect()->action('UserController@show', ['id' => $now_user->id]);
@@ -190,6 +196,7 @@ class ContentController extends Controller
         }
 
         $content->delete();
+        $graph_data ->delete();
         return redirect("/users/$user_id");
     }
 
