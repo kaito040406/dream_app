@@ -34,7 +34,7 @@ class UranaiController extends Controller
         $l = 0;
         // Log::debug($request->check_texts);
         // $leng = count($request->check_texts);
-        // Log::debug($leng);
+        
         if($request->check_texts != null){
             foreach($request->check_texts as $request_data){
                 if($request_data=='夢'){
@@ -64,7 +64,7 @@ class UranaiController extends Controller
                     }
                 }
             }
-
+            
             if($l == 0){
                 $selects_uranai_changed = "no_data";
             }
@@ -73,28 +73,28 @@ class UranaiController extends Controller
                 foreach($test as $duplication_check){
                     $pre_export[$i] = $duplication_check;
                     $per_edit_export[$i] = $pre_export[$i];
-                    if($i == 0 or $i == 1){
-                    }
-                    else{
-                        $cnt = count($pre_export);
-                        $cnt2 = $cnt - 1;
-                        $esc = $per_edit_export[$i];
-                        unset($per_edit_export[$i]);
-                        foreach($per_edit_export as $post_export){
-                            if($post_export->id == $duplication_check->id){
-                                $export[] = $duplication_check;
-                                $message = "meny";
-                            }
-                        }
-                        $per_edit_export[$i] = $pre_export[$i];
-                        $cnt3 = count($export);
-                        if($cnt3 == 0){
-                            foreach($selects_uranai as $selects){
-                                $export[] = $selects;
-                            }
-                            $message = "solo";
+                    // if($i == 0 or $i == 1){
+                    // }
+                    // else{
+                    $cnt = count($pre_export);
+                    $cnt2 = $cnt - 1;
+                    $esc = $per_edit_export[$i];
+                    unset($per_edit_export[$i]);
+                    foreach($per_edit_export as $post_export){
+                        if($post_export->id == $duplication_check->id){
+                            $export[] = $duplication_check;
+                            $message = "meny";
                         }
                     }
+                    $per_edit_export[$i] = $pre_export[$i];
+                    $cnt3 = count($export);
+                    if($cnt3 == 0){
+                        foreach($selects_uranai as $selects){
+                            $export[] = $selects;
+                        }
+                        $message = "solo";
+                    }
+                    // }
                     $i = $i + 1;
                 }
             }
@@ -107,6 +107,7 @@ class UranaiController extends Controller
             $export[] = "no_data";
             $message = "no_data";
         }
+        
         $json = array(
             "hit_dreams" => $export,
             "message" => $message
