@@ -154,7 +154,7 @@ $(function(){
                   var day_point = [];
                   var i = 0
                   datas.data.forEach(function(point_data){
-                    var change_data = point_data.created_at.slice( 0, -9 )
+                    var change_data = point_data.day.slice( 0, -9 )
                     var chage_data2 = change_data.slice(5, 12)
                     create_day[i] = chage_data2
                     day_point[i] = Number(point_data.element_point)

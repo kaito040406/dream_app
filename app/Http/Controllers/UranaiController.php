@@ -125,7 +125,8 @@ class UranaiController extends Controller
             $input_data = new Graph;
             $input_data->element_point = $request->ave;
             $input_data->user_id = $user->id;
-            $input_data->content_id = $get_content->content_id;
+            $input_data->content_id = $request->content_id;
+            $input_data->day = $get_content->created_at;
             $input_data->save();
             $json = array(
                 "message" => "診断完了です"
