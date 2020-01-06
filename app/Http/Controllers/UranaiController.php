@@ -118,13 +118,14 @@ class UranaiController extends Controller
 
     public function ajax_post_json(Request $request) {
         $content = Graph::where('content_id', $request->content_id)->get();
+        $get_content = Content::find($request->content_id);
         $cnt = count($content);
         if ($cnt == 0){
             $user = Auth::user();
             $input_data = new Graph;
             $input_data->element_point = $request->ave;
             $input_data->user_id = $user->id;
-            $input_data->content_id = $request->content_id;
+            $input_data->content_id = $get_content->content_id;
             $input_data->save();
             $json = array(
                 "message" => "診断完了です"
