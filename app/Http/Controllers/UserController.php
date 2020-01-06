@@ -62,8 +62,8 @@ class UserController extends Controller
         else{
             return redirect()->action('UserController@show', ['id' => $now_user->id]);
         }
-        // $contents_all = Content::where('user_id', $id)->sortByDesc('created_at')->paginate(4)->get();
-        $contents_all = Content::orderBy('created_at', 'desc')->paginate(30);
+        $contents = Content::where('user_id', $id);
+        $contents_all = $contents->paginate(2);
         // $contents = $contents_all->sortByDesc('created_at')->paginate(4);
         $contents = $contents_all;
         $contents_count = count($contents);
@@ -113,13 +113,9 @@ class UserController extends Controller
                 'name' => 'required',
                 'intro' => 'required',
                 'icon' => [
-                    // 必須
                     'required',
-                    // アップロードされたファイルであること
                     'file',
-                    // 画像ファイルであること
                     'image',
-                    // MIMEタイプを指定
                     'mimes:jpeg,png',
                 ],
             ];

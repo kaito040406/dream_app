@@ -104,9 +104,6 @@ $(function(){
                   setTimeout(() => {
                     $(".load").empty();
                   }, 400);
-                console.log(data)
-
-
 
                 var user_id = $(".user_name_box").attr("id");
                 var html = `<div class="graph_in" id="1">
