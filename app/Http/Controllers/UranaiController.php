@@ -134,7 +134,7 @@ class UranaiController extends Controller
         }
         else{
             $json = array(
-                "message" => $request->ave
+                "message" => "以前に診断をしております"
             );
         }
         return $json;

@@ -100,6 +100,8 @@ $(function(){
                 }, '_method': 'POST'
               })
               .done(function(data){
+
+                alert(data.message);
                 $(".graph_in").hide(300);
                   setTimeout(() => {
                     $(".load").empty();
@@ -296,7 +298,7 @@ $(function(){
                   }
                 })
                 .fail(function(){
-                  console.log("メッセージ取得失敗")
+                  alert("エラー");
                 })
 
                 
@@ -306,7 +308,7 @@ $(function(){
         })
       })
       .fail(function(){
-        console.log("メッセージ取得失敗")
+        alert("エラー");
       })
     }
   })
