@@ -16,9 +16,11 @@
     <link href="https://fonts.googleapis.com/css?family=Alegreya+Sans+SC:300 rel="stylesheet">
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.js"></script>
     <script type="module" src="{{ asset('js/graph.js') }}"></script>
+    <script type="module" src="{{ asset('js/new_content.js') }}"></script>
     <script type="module" src="{{ asset('js/scroll.js') }}"></script>
     <link href="{{ asset('css/mainpage.css') }}" rel="stylesheet">
     <link href="{{ asset('css/per_page.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/show_new_content.css') }}" rel="stylesheet">
   </head>
   <body>
     @if( Auth::id() == $user->id )
@@ -65,7 +67,7 @@
               </div>
               <div class="content_box">
                 <div class="form_box">
-                  <a href="/users/{{$user->id}}/contents" method="get">
+                  <a>
                     <img src="/images/1720429.png" alt="inu" class="per_image" width="90" height="75">
                       <div class="new_content">新規投稿</div>
                 </a><br />
@@ -95,6 +97,9 @@
                   </a><br />
                 </div>
               </div>
+            </div>
+
+            <div class="new_content_page">
             </div>
 
             <div class="graph">
