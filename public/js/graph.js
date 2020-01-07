@@ -2,12 +2,19 @@
 $(function(){
   $(".likes_box").on('click',function(){
     var st = $(".graph_in").attr("id");
+    var st_content = $(".new_content_in").attr("id");
     if(st == 1){
       $(".graph_in").hide(300);
       setTimeout(() => {
         $(".graph").empty();
       }, 400);
     }else{
+      if(st_content == 1){
+        $(".new_content_in").hide(300);
+        setTimeout(() => {
+          $(".new_content_page").empty();
+        }, 400);
+      }
       var user_id = $(".user_name_box").attr("id");
       var html = `<div class="graph_in" id="1">
                     <div class="close_button">
