@@ -1,7 +1,7 @@
 import './kuromoji.js';
 
 $(function(){
-  $(".content_diagnosis_button").on('click',function(){
+  $(document).on('click', '.content_diagnosis_button', function(e){
     var st = $(".graph_in").attr("id");
     if(st == 1){
 
