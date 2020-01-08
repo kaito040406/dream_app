@@ -31,3 +31,4 @@ Route::get('/api/ajax/get_json', 'UranaiController@ajax_get_json');
 Route::post('/api/ajax/get_uranai', 'UranaiController@ajax_get_uranai');
 Route::post('/api/ajax/make_graph', 'UranaiController@ajax_post_json');
 Route::get('/api/ajax/graph', 'UranaiController@ajax_graph_json');
+Route::post('/api/ajax/new_content', 'ContentController@ajax_new_content_json');

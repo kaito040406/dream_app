@@ -45,7 +45,69 @@ $(function(){
   $(document).on('click', '.content_create_bottan', function(e){
     var input_title = $(".title_form").val();
     var input_body = $(".form_body").val();
-    console.log(input_title);
-    console.log(input_body);
+    var user_id = $(".user_name_box").attr("id");
+    $.ajax({
+      url: '/api/ajax/new_content',
+      type: 'post',
+      headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
+      dataType: 'json',
+      data: {
+        user_id: user_id,
+        title: input_title,
+        body: input_body
+      }, '_method': 'POST'
+    })
+    .done(function(data){
+      alert(data.message)
+      if(data.message == "投稿完了"){
+        $(".new_content_in").hide(300);
+        setTimeout(() => {
+          $(".new_content_page").empty();
+        }, 400);
+        var append_html = `
+                      <div class="content_main_box">
+                          <div class="content_day">
+                            投稿日
+                            ${data.day}
+                          </div>
+                          <div class="content_title">
+                            タイトル:
+                            ${data.data.title}
+                          </div>
+                          <div class="content_body">
+                          ${data.data.body}
+                          </div>
+                          <div class="setting_bottam">
+                            <div class="creater_box">
+                              <img src="/public/avatar/noimage.png" alt="inu" class="icon_image" width="45" height="45">
+                              <div class="creater_content">kaitoさんの投稿です</div>
+                            </div>
+                            <div class="content_edit_button">
+                              <a href="/users/${data.data.user_id}/contents/${data.data.id}/edit" method="get">
+                                <img src="/images/illust1109.png" alt="inu" class="content_edit_image" width="45" height="45">
+                                <div class="edit_content">編集</div>
+                              </a><br>
+                            </div>
+                            <div class="content_delete_button">
+                              <a href="/users/${data.data.user_id}/contents/${data.data.id}/delete" method="get">
+                                <img src="/images/namagomi.png" alt="inu" class="content_edit_image" width="50" height="45">
+                                <div class="edit_content">削除</div>
+                              </a><br>
+                            </div>
+                            <div class="content_diagnosis_button" id="4">
+                              <a>
+                                <img src="/images/613.png" alt="inu" class="content_edit_image" width="50" height="45">
+                                <div class="edit_content">診断</div>
+                              </a><br>
+                            </div>
+                          </div>
+                        </div>
+        `
+        $(".main_zone").prepend(append_html);
+      }
+    })
+    .fail(function(){
+      alert("エラー")
+    })
   })
 })

@@ -9,6 +9,9 @@ use App\User;
 use App\Content;
 use App\Graph;
 use Validator;
+use Carbon\Carbon;
+use Log;
+
 class ContentController extends Controller
 {
     /**
@@ -224,5 +227,43 @@ class ContentController extends Controller
             'content' => $content,
         ];
         return view('contents.delete', $params);
+    }
+    public function ajax_new_content_json(Request $request) {
+
+        $content = new Content;
+        $form = $request->all();
+        $rules = [
+            'user_id' => 'required',
+            'title' => 'required',
+            'body' => 'required',
+        ];
+        $body = [
+            'user_id.integer' => 'System Error',
+            'user_id.required' => 'System Error',
+            'title.required'=> 'タイトルが入力されていません',
+            'body.required'=> 'メッセージが入力されていません'
+        ];
+        $validator = Validator::make($form, $rules, $body);
+
+        if($validator->fails()){
+            $json = array(
+                "message" => "エラー"
+            );
+        }else{
+            // unset($form['_token']);
+            $content->user_id = $request->user_id;
+            $content->title = $request->title;
+            $content->body = $request->body;
+            $content->save();
+            $now = Carbon::now()->format('Y年m月d日');
+            $new_content = Content::where('user_id',$request->user_id)->orderBy('created_at', 'desc')->first();
+            $json = array(
+                "message" => "投稿完了",
+                "data" => $new_content,
+                "day" => $now 
+            );
+        }
+        
+        return $json;
     }
 }
