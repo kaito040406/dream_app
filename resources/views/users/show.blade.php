@@ -56,9 +56,9 @@
               <div class="per_img_box">
                 <div class="per_img_box_box">
                   @if($user->icon != null)
-                    <img src="/public/avatar/{{$user->icon}}" alt="inu" class="icon_image" width="90" height="90">
+                    <img src="/public/avatar/{{$user->icon}}" alt="inu" class="icon_image">
                   @else
-                    <img src="/images/azarasi.png" alt="inu" class="icon_image" width="90" height="90">
+                    <img src="/images/azarasi.png" alt="inu" class="icon_image">
                   @endif
                 </div>
               </div>
@@ -68,19 +68,19 @@
               <div class="content_box">
                 <div class="form_box">
                   <a>
-                    <img src="/images/1720429.png" alt="inu" class="per_image" width="90" height="75">
+                    <img src="/images/1720429.png" alt="inu" class="per_image_2">
                       <div class="new_content">新規投稿</div>
                 </a><br />
                 </div>
                 <div class="edit_profile_box">
                   <a href="/users/{{$user->id}}/edit" method="get">
-                    <img src="/images/azarasi.png" alt="inu" class="per_image" width="75" height="75">
-                      <div class="new_content">Edit profile</div>
+                    <img src="/images/azarasi.png" alt="inu" class="per_image">
+                      <div class="new_content">自分編集</div>
                   </a><br />
                 </div>
                 <div class="likes_box">
                   <a>
-                    <img src="/images/illust3199.png" alt="inu" class="per_image" width="75" height="75">
+                    <img src="/images/illust3199.png" alt="inu" class="per_image">
                       <div class="new_content">診断結果</div>
                   </a><br />
                 </div>
@@ -89,7 +89,7 @@
                                                       document.getElementById('logout-form').submit();">
                     <img src="/images/1550411.png" alt="inu" class="per_image" width="75" height="75">
                       <div class="new_content">
-                          <div class="new_content">ログアウト</div>
+                          <div class="new_content2">ログアウト</div>
                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                             {{ csrf_field() }}
                         </form>
@@ -130,24 +130,24 @@
                         </div>
                         <div class="setting_bottam">
                           <div class="creater_box">
-                            <img src="/public/avatar/{{$user->icon}}" alt="inu" class="icon_image" width="45" height="45">
+                            <img src="/public/avatar/{{$user->icon}}" alt="inu" class="icon_image_2">
                             <div class="creater_content">{{$user->name}}さんの投稿です</div>
                           </div>
                           <div class="content_edit_button">
                             <a href="/users/{{$user->id}}/contents/{{$content->id}}/edit" method="get">
-                              <img src="/images/illust1109.png" alt="inu" class="content_edit_image" width="45" height="45">
+                              <img src="/images/illust1109.png" alt="inu" class="content_edit_image_2">
                               <div class="edit_content">編集</div>
                             </a><br />
                           </div>
                           <div class="content_delete_button">
                             <a href="/users/{{$user->id}}/contents/{{$content->id}}/delete" method="get">
-                              <img src="/images/namagomi.png" alt="inu" class="content_edit_image" width="50" height="45">
+                              <img src="/images/namagomi.png" alt="inu" class="content_edit_image">
                               <div class="edit_content">削除</div>
                             </a><br />
                           </div>
                           <div class="content_diagnosis_button" id="{{$content->id}}">
                             <a>
-                              <img src="/images/613.png" alt="inu" class="content_edit_image" width="50" height="45">
+                              <img src="/images/613.png" alt="inu" class="content_edit_image">
                               <div class="edit_content">診断</div>
                             </a><br />
                           </div>

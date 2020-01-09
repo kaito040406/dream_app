@@ -43,7 +43,7 @@ $(function(){
                       </div>
                     </div>
                     <div class="azarashi_box">
-                      <img src="/images/azarashi-shirokuro.png" alt="inu" class="per_image" width="130" height="130">
+                      <img src="/images/azarashi-shirokuro.png" alt="inu" class="per_image_azarashi">
                     </div>
                   </div>
                   ` 
@@ -102,107 +102,211 @@ $(function(){
           $(".graph_in").show(300);
           var ctx = document.getElementById('canvas').getContext('2d');
           var ctx_bar = document.getElementById('canvas_bar').getContext('2d');
-          window.myChart = new Chart(ctx, {
-            type: 'line',
-            data: {
-              labels: day_create_last,
-              datasets:[{
-                label: '累計データ',
-                data: sum_point_last,
-                backgroundColor: 'rgba(60, 160, 220, 0.3)',
-                borderColor: '#FF9900',
-                fill: false,
-                borderDash: [8, 2],
-              }],
-            },
-            options: {
-              legend: {
-                display: false
+          var windowWidth = $(window).width();
+          if(windowWidth <= 481){
+            window.myChart = new Chart(ctx, {
+              type: 'line',
+              data: {
+                labels: day_create_last,
+                datasets:[{
+                  label: '累計データ',
+                  data: sum_point_last,
+                  backgroundColor: 'rgba(60, 160, 220, 0.3)',
+                  borderColor: '#FF9900',
+                  fill: false,
+                  borderDash: [8, 2],
+                }],
               },
-              scales:{
-                xAxes:[{
-                  ticks:{
-                    min:0,
-                    fontSize: 20  
-                  },
-                  scaleLabel: {                 
-                    display: true,            
-                    labelString: '',  
-                    fontSize: 20,
-                    labelString: 'クリックでグラフ変更ができます',                  
+              options: {
+                legend: {
+                  display: false
                 },
-                }],
-                yAxes:[{
-                  ticks:{
-                    min:-20,
-                    max:20,
-                    fontSize: 20  
+                scales:{
+                  xAxes:[{
+                    ticks:{
+                      min:0,
+                      fontSize: 10  
+                    },
+                    scaleLabel: {                 
+                      display: true,            
+                      labelString: '',  
+                      fontSize: 10,
+                      labelString: 'クリックでグラフ変更ができます',                  
                   },
-                  scaleLabel: {   
-                    display: true,               
-                    labelString: '累計ポイント', 
-                    fontSize: 20                  
-                },
-                }],
+                  }],
+                  yAxes:[{
+                    ticks:{
+                      min:-20,
+                      max:20,
+                      fontSize: 9  
+                    },
+                    scaleLabel: {   
+                      display: true,               
+                      labelString: '累計ポイント', 
+                      fontSize: 10                  
+                  },
+                  }],
+                }
               }
-            }
-          });
+            });
 
-          
-          window.myChart = new Chart(ctx_bar, {
-            type: 'bar',
-            data: {
-              labels: day_create_last,
-              datasets:[{
-                label: '累計データ',
-                data: day_point_last,
-                backgroundColor: 'rgba(60, 160, 220, 0.8)',
-                borderColor: '#000080',
-              }],
-            },
-            options: {
-              legend: {
-                display: false
+            
+            window.myChart = new Chart(ctx_bar, {
+              type: 'bar',
+              data: {
+                labels: day_create_last,
+                datasets:[{
+                  label: '累計データ',
+                  data: day_point_last,
+                  backgroundColor: 'rgba(60, 160, 220, 0.8)',
+                  borderColor: '#000080',
+                }],
               },
-              scales:{
-                xAxes:[{
-                  ticks:{
-                    min:0,
-                    fontSize: 20  
-                  },
-                  scaleLabel: {                 
-                    display: true,            
-                    labelString: '',  
-                    fontSize: 20                
+              options: {
+                legend: {
+                  display: false
                 },
-                }],
-                xAxes: [{                  
-                  display: true,             
-                  barPercentage: 0.4,       
-                  categoryPercentage: 0.4,     
-                  scaleLabel: {             
-                     display: true,           
-                     fontSize: 20,
-                     labelString: 'クリックでグラフ変更ができます',            
+                scales:{
+                  xAxes:[{
+                    ticks:{
+                      min:0,
+                      fontSize: 10  
+                    },
+                    scaleLabel: {                 
+                      display: true,            
+                      labelString: '',  
+                      fontSize: 10                
                   },
-                  ticks: {
-                      fontSize: 18          
-                  },
-                }],
-                yAxes:[{
-                  ticks:{
-                    fontSize: 20  
-                  },
-                  scaleLabel: {   
-                    display: true,               
-                    labelString: 'ポイント', 
-                    fontSize: 20                  
-                  },
-                }],
+                  }],
+                  xAxes: [{                  
+                    display: true,             
+                    barPercentage: 0.4,       
+                    categoryPercentage: 0.4,     
+                    scaleLabel: {             
+                      display: true,           
+                      fontSize: 10,
+                      labelString: 'クリックでグラフ変更ができます',            
+                    },
+                    ticks: {
+                        fontSize: 9          
+                    },
+                  }],
+                  yAxes:[{
+                    ticks:{
+                      fontSize: 10  
+                    },
+                    scaleLabel: {   
+                      display: true,               
+                      labelString: 'ポイント', 
+                      fontSize: 10                  
+                    },
+                  }],
+                }
               }
-            }
-          });
-          
+            });
+          }
+          else{
+            window.myChart = new Chart(ctx, {
+              type: 'line',
+              data: {
+                labels: day_create_last,
+                datasets:[{
+                  label: '累計データ',
+                  data: sum_point_last,
+                  backgroundColor: 'rgba(60, 160, 220, 0.3)',
+                  borderColor: '#FF9900',
+                  fill: false,
+                  borderDash: [8, 2],
+                }],
+              },
+              options: {
+                legend: {
+                  display: false
+                },
+                scales:{
+                  xAxes:[{
+                    ticks:{
+                      min:0,
+                      fontSize: 20  
+                    },
+                    scaleLabel: {                 
+                      display: true,            
+                      labelString: '',  
+                      fontSize: 20,
+                      labelString: 'クリックでグラフ変更ができます',                  
+                  },
+                  }],
+                  yAxes:[{
+                    ticks:{
+                      min:-20,
+                      max:20,
+                      fontSize: 20  
+                    },
+                    scaleLabel: {   
+                      display: true,               
+                      labelString: '累計ポイント', 
+                      fontSize: 20                  
+                  },
+                  }],
+                }
+              }
+            });
+
+            
+            window.myChart = new Chart(ctx_bar, {
+              type: 'bar',
+              data: {
+                labels: day_create_last,
+                datasets:[{
+                  label: '累計データ',
+                  data: day_point_last,
+                  backgroundColor: 'rgba(60, 160, 220, 0.8)',
+                  borderColor: '#000080',
+                }],
+              },
+              options: {
+                legend: {
+                  display: false
+                },
+                scales:{
+                  xAxes:[{
+                    ticks:{
+                      min:0,
+                      fontSize: 20  
+                    },
+                    scaleLabel: {                 
+                      display: true,            
+                      labelString: '',  
+                      fontSize: 20                
+                  },
+                  }],
+                  xAxes: [{                  
+                    display: true,             
+                    barPercentage: 0.4,       
+                    categoryPercentage: 0.4,     
+                    scaleLabel: {             
+                      display: true,           
+                      fontSize: 20,
+                      labelString: 'クリックでグラフ変更ができます',            
+                    },
+                    ticks: {
+                        fontSize: 18          
+                    },
+                  }],
+                  yAxes:[{
+                    ticks:{
+                      fontSize: 20  
+                    },
+                    scaleLabel: {   
+                      display: true,               
+                      labelString: 'ポイント', 
+                      fontSize: 20                  
+                    },
+                  }],
+                }
+              }
+            });
+          }
         }
       })
       .fail(function(){
