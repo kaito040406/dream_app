@@ -131,7 +131,7 @@
                         <div class="setting_bottam">
                           <div class="creater_box">
                             <img src="/public/avatar/{{$user->icon}}" alt="inu" class="icon_image_2">
-                            <div class="creater_content">{{$user->name}}さんの投稿です</div>
+                            <div class="creater_content">{{$user->name}}さんの投稿</div>
                           </div>
                           <div class="content_edit_button">
                             <a href="/users/{{$user->id}}/contents/{{$content->id}}/edit" method="get">

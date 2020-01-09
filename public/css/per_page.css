@@ -410,6 +410,7 @@
     height:60px;
     background-color: #003366;
     position: fixed!important;
+    z-index: 100!important;
   }
   
   a {
@@ -461,8 +462,8 @@
     background-color: whitesmoke;
   }
   .icon_image_2{
-    width: 22px;
-    height: 22px;
+    width: 30px;
+    height: 30px;
     border-radius: 25px;
     border: 1.5px solid #CCCCFF;
     background-color: whitesmoke;
@@ -614,7 +615,7 @@
     text-align: center;
     font-size:7px;
     float: right;
-    margin-top: 5px;
+    margin-top: 8px;
     padding-left:2px;
   }
 
