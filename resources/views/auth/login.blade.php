@@ -59,6 +59,9 @@
                                     <a class="btn btn-link" href="{{ route('password.request') }}" id = "forget_pass">
                                         パスワードを忘れちゃった！！
                                     </a>
+                                    <a class="btn btn-link" href="{{ route('register') }}" id = "new_pass">
+                                        新規登録
+                                    </a>
                                 </div>
                             </div>
                         </form>

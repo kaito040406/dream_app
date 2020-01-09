@@ -10,6 +10,7 @@
     <link href="https://fonts.googleapis.com/css?family=Alegreya+Sans+SC:300 rel="stylesheet">
     <link href="{{ asset('css/auth.css') }}" rel="stylesheet">
     <link href="{{ asset('css/mainpage.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/per_page.css') }}" rel="stylesheet">
     <link href="css/_reset.css" rel="stylesheet" type="text/css">
 
     <title>Dream Diary</title>
