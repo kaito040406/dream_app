@@ -397,7 +397,7 @@
 }
 
 
-@media screen and (max-width:480px) {
+@media screen and (max-width:1279px) {
   body{
     background-image: url(/images/7207.png);
     background-attachment: fixed;
