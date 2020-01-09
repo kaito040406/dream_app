@@ -255,12 +255,14 @@ class ContentController extends Controller
             $content->title = $request->title;
             $content->body = $request->body;
             $content->save();
+            $user = User::find($request->user_id);
             $now = Carbon::now()->format('Y年m月d日');
             $new_content = Content::where('user_id',$request->user_id)->orderBy('created_at', 'desc')->first();
             $json = array(
                 "message" => "投稿完了",
                 "data" => $new_content,
-                "day" => $now 
+                "day" => $now,
+                "user" => $user
             );
         }
         
