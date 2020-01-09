@@ -90,11 +90,12 @@
     font-family: 'Amatic SC', cursive;
     color: #555555; 
     box-shadow: 0 0 10px 10px 	#EEFFFF; 
-    height: 170px;
+    height: 200px;
   }
 
   .content_create_bottan{
     margin-top: 5px;
+    margin-bottom: 10px;
     width: 60%;
     height: 50px;
     color: #003366;
@@ -109,7 +110,7 @@
     height: 30px;
     width: 30px;
     background-color: #EDFFBE;
-    position: relative;
+    position: fixed;
     color: #003366;
     border-radius: 20px;
     border-top-left-radius: 15px;

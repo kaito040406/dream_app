@@ -656,21 +656,24 @@
   .new_content_in{
     display: none;
     position: fixed;
-    width: 340px;
-    height: 400px;
+    width: 90%;
+    height: 250px;
+    top: 100px;
     left: 4%;
     background-image: url(/images/fukurou.jpg);
     background-size: cover;
     border-radius: 20px;
     border: 3px solid #EDFFBE;
+    overflow: scroll;
   }
 
 
   .graph_in{
     display: none;
     position: fixed;
-    width: 340px;
-    height: 400px;
+    width: 90%;
+    height: 250px;
+    top: 100px;
     left: 4%;
     background-color: blanchedalmond;
     border-radius: 20px;
@@ -678,6 +681,151 @@
   }
 
 
+
+  #canvas{
+    margin-left: 65%;
+    margin-top: 0px;
+    background-color: #EDFFBE;
+    border-radius: 5px;
+    box-shadow: 1px 1px 2px gray;
+    cursor : pointer;
+    height: 200px!important;
+    width: 280px!important;
+  }
+
+  .close_button{
+    height: 30px;
+    width: 30px;
+    background-color: #003366;
+    position: relative;
+    color: #EDFFBE;
+    border-radius: 20px;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 1px;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 1px;
+    cursor : pointer;
+  }
+  .close_text{
+    text-align: center;
+    position: relative;
+    font-size:28px;
+    bottom: 10px;
+    cursor : pointer;
+  }
+
+  .open_data{
+    position: relative;
+    height:100px;
+    width:110px;
+    background-color: #FFEEFF;
+    border: 3px solid #FF55FF;
+    border-radius: 10px;
+    left:10px;
+  }
+
+  .open_text_introduction{
+    text-align: center;
+    color: black;
+    font-size: 12px;
+    margin-top:5px;
+  }
+
+  .open_text_data_text{
+    text-align: center;
+    color: black;
+    font-size: 20px;
+    margin-top:15px;
+  }
+
+  .azarashi_box{
+    position: absolute;
+    left:190px;
+    top: 140px;
+  }
+
+  .azarashi_text_box{
+    position: absolute;
+    left:130px;
+    top: 20px;
+    background-color: #CCFFFF;
+    border-radius: 20px;
+    border: 3px solid #00FFFF;
+    display:inline-block;
+  }
+  .azarashi_text{
+    font-size:12px;
+    padding:4px;
+    width:150px;
+  }
+
+  .azarashi_text_box:before {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -15px;
+    border: 15px solid transparent;
+    border-top: 15px solid #00FFFF;
+  }
+
+  .bar{
+    display: none;
+    height: 100%!important;
+    width: 100%!important;
+  }
+
+  #canvas_bar{
+    margin-left: 65%;
+    margin-top: 0px;
+    background-color: #FFEEFF;
+    border-radius: 5px;
+    box-shadow: 1px 1px 2px gray;
+    cursor : pointer;
+    height: 200px!important;
+    width: 280px!important;
+  }
+
+
+
+  .load_text{
+    font-size: 40px;
+    text-align: center;
+    padding-top: 100px;
+  }
+
+  .per_image_azarashi{
+    height:40px;
+    width:40px;
+  }
+}
+
+
+@media screen and (max-width:600px) {
+  .graph_in{
+    display: none;
+    position: fixed;
+    width: 340px;
+    height: 400px;
+    left: 4%;
+    top: 230px;
+    background-color: blanchedalmond;
+    border-radius: 20px;
+    border: 3px solid #003366;
+  }
+
+  .new_content_in{
+    display: none;
+    position: fixed;
+    width: 340px;
+    height: 400px;
+    left: 4%;
+    top: 230px;
+    background-image: url(/images/fukurou.jpg);
+    background-size: cover;
+    border-radius: 20px;
+    border: 3px solid #EDFFBE;
+  }
 
   #canvas{
     margin-left: 10%;
@@ -796,6 +944,4 @@
     width:40px;
   }
 }
-@media screen and (min-width:481px) and ( max-width:600px) {
 
-}
