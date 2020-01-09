@@ -362,6 +362,9 @@
   .icon_image_2{
     width: 45px;
     height: 45px;
+    border-radius: 50px;
+    border: 3px solid #CCCCFF;
+    background-color: whitesmoke;
   }
 
   .per_image_2{
@@ -457,6 +460,9 @@
   .icon_image_2{
     width: 22px;
     height: 22px;
+    border-radius: 25px;
+    border: 1.5px solid #CCCCFF;
+    background-color: whitesmoke;
   }
 
   .per_image_2{
