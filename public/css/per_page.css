@@ -72,6 +72,7 @@
     border-radius: 5px;
     border: 3px solid #00FFFF;
     float: left;
+    cursor : pointer;
   }
 
   .edit_profile_box:hover {
