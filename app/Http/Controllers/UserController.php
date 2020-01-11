@@ -162,6 +162,18 @@ class UserController extends Controller
     }
 
     public function ajax_get_user(Request $request) {
-
+        $check_user = User::find($request->id);
+        $now_user = Auth::user();
+        if($check_user == $now_user){
+            $json = array(
+                "message" => "scucsses",
+                "user" => $now_user
+            );
+        }else{
+            $json = array(
+                "message" => "エラー"
+            );
+        }
+        return $json;
     }
 }
