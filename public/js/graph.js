@@ -3,6 +3,7 @@ $(function(){
   $(".likes_box").on('click',function(){
     var st = $(".graph_in").attr("id");
     var st_content = $(".new_content_in").attr("id");
+    var edit_st = $(".edit_personal_in").attr("id");
     if(st == 1){
       $(".graph_in").hide(300);
       setTimeout(() => {
@@ -14,6 +15,12 @@ $(function(){
         setTimeout(() => {
           $(".new_content_page").empty();
         }, 400);
+      }
+      if (edit_st == 1){
+        $(".edit_personal_in").hide(300);
+          setTimeout(() => {
+            $(".edit_personal").empty();
+          }, 400);
       }
       var user_id = $(".user_name_box").attr("id");
       var html = `<div class="graph_in" id="1">

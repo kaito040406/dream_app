@@ -17,10 +17,12 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.js"></script>
     <script type="module" src="{{ asset('js/graph.js') }}"></script>
     <script type="module" src="{{ asset('js/new_content.js') }}"></script>
+    <script type="module" src="{{ asset('js/user_edit.js') }}"></script>
     <script type="module" src="{{ asset('js/scroll.js') }}"></script>
     <link href="{{ asset('css/mainpage.css') }}" rel="stylesheet">
     <link href="{{ asset('css/per_page.css') }}" rel="stylesheet">
     <link href="{{ asset('css/show_new_content.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/show_user_edit.css') }}" rel="stylesheet">
   </head>
   <body>
     @if( Auth::id() == $user->id )
@@ -73,7 +75,7 @@
                 </a><br />
                 </div>
                 <div class="edit_profile_box">
-                  <a href="/users/{{$user->id}}/edit" method="get">
+                  <a>
                     <img src="/images/azarasi.png" alt="inu" class="per_image">
                       <div class="new_content">自分編集</div>
                   </a><br />
@@ -101,6 +103,52 @@
 
             <div class="new_content_page">
             </div>
+
+
+            <div class="edit_personal">
+              <!-- <div class="edit_personal_in" id = "1"> 
+                <div class="close_button">
+                  <div class="close_text">
+                    ×
+                  </div>
+                </div>
+                <div class="user_edit_form">
+                  <form action="/users/{{$user->id}}" method="post" id="user_edit_bottan" enctype="multipart/form-data">
+                    {{ csrf_field() }}
+                    <div class="f_name_f">
+                      お名前
+                      <input type="text" class="form_name" name="name" placeholder="お名前" value="{{ $user->name }}">
+                    </div>
+                    <div class="f_birth_f">
+                      生年月日
+                      <input type="text" class="form_year" name="birth_year" placeholder="1993" value="{{ $user->birth_year }}">年
+                      <input type="text" class="form_month" name="birth_month" placeholder="2" value="{{ $user->birth_month }}">月
+                      <input type="text" class="form_day" name="birth_day" placeholder="5" value="{{ $user->birth_day }}">日
+                    </div>
+                    <div class="f_intoro_f">
+                      一言紹介
+                      <input type="text" class="form_intro2" name="intro" value="{{ $user->intro }}">
+                    </div>
+                    <label>
+                      <div class="f_icon_f">
+                        画像を選択してください</br>
+                        <div class = "pic_box">
+                          <span class="filelabel" title="ファイルを選択">
+                            <img src="/images/camera.png" width="32" height="32" alt="＋画像">
+                          </span>
+                        </div>
+                        <input type="file" name="icon" class="file_bottan" id = "file_bottan" value="{{ $user->icon }}" accept=".jpg,.png">
+                      </div>
+                    </label>
+                    <div class="f_submit_f">
+                      <input type="hidden" name="_method" value="PUT">
+                      <input type="submit" class="create" value="編  集">
+                    </div>
+                  </form>
+                </div>
+              </div> -->
+            </div>
+
 
             <div class="graph">
             </div>

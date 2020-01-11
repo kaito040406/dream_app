@@ -390,6 +390,19 @@
     width:130px;
   }
 
+  .edit_personal_in{
+    /* display: none; */
+    position: fixed;
+    width: 1000px;
+    height: 600px;
+    left: 225px;
+    top: 160px;
+    background-image: url(/images/pattern.jpg);
+    background-size: cover;
+    border-radius: 20px;
+    border: 3px solid #003366;
+  }
+
 }
 
 

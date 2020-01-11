@@ -2,6 +2,7 @@ $(function(){
   $(".form_box").on('click',function(){
     var st_content = $(".new_content_in").attr("id");
     var st = $(".graph_in").attr("id");
+    var edit_st = $(".edit_personal_in").attr("id");
     if(st_content == 1){
       $(".new_content_in").hide(300);
       setTimeout(() => {
@@ -12,6 +13,12 @@ $(function(){
         $(".graph_in").hide(300);
         setTimeout(() => {
           $(".graph").empty();
+        }, 400);
+      }
+      if(edit_st == 1){
+        $(".edit_personal_in").hide(300);
+        setTimeout(() => {
+          $(".edit_personal").empty();
         }, 400);
       }
       var form_html = `

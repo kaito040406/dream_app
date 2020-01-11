@@ -1,0 +1,225 @@
+@media screen and (min-width:1280px) {
+  /* .user_edit_form{
+    margin: 0 auto;
+    width: 60%;
+    padding: 120px 5% 30px 5%;
+    background-color: #EDFFBE;
+    box-shadow: 1px 1px 2px gray;
+  } */
+  .edit_personal_in{
+    display: none;
+  }
+  .user_edit_form{
+    border:none;
+    margin: 40px 20%;
+    padding: 10px;
+    width: 60%;
+    border-radius: 10px;
+    font-family: 'Amatic SC', cursive;
+    color: #555555; 
+    background-color: #EDFFBE;
+    box-shadow: 0 0 10px 10px 	#EDFFBE; 
+  }
+
+  .f_name_f{
+    padding-left:5%;
+    margin: 20px 5%;
+    font: 1.6rem;
+  }
+  .form_name{
+    width: 20%;
+    height: 35px;
+    margin-left: 5%;
+    border:none;
+    padding: 5px;
+    border-radius: 10px;
+    font-family: 'Amatic SC', cursive;
+    color: #555555; 
+    box-shadow: 0 0 10px 10px 	#EEFFFF; 
+  }
+  .f_birth_f{
+    padding-left:5%;
+    margin: 20px 5%;
+    font: 1.6rem;
+  }
+
+  .form_year{
+    width: 18%;
+    height: 35px;
+    margin-left: 5%;
+    margin-right: 2%;
+    border:none;
+    padding: 5px;
+    border-radius: 10px;
+    font-family: 'Amatic SC', cursive;
+    color: #555555; 
+    box-shadow: 0 0 10px 10px 	#EEFFFF; 
+  }
+  .form_month{
+    width: 18%;
+    height: 35px;
+    margin-left: 5%;
+    margin-right: 2%;
+    border:none;
+    padding: 5px;
+    border-radius: 10px;
+    font-family: 'Amatic SC', cursive;
+    color: #555555; 
+    box-shadow: 0 0 10px 10px 	#EEFFFF; 
+  }
+  .form_day{
+    width: 18%;
+    height: 35px;
+    margin-left: 5%;
+    margin-right: 2%;
+    border:none;
+    padding: 5px;
+    border-radius: 10px;
+    font-family: 'Amatic SC', cursive;
+    color: #555555; 
+    box-shadow: 0 0 10px 10px 	#EEFFFF; 
+  }
+  .f_intoro_f{
+    padding-left:5%;
+    margin: 20px 30px;
+    font: 1.6rem;
+  }
+  .form_intro2{
+    width: 50%;
+    height: 35px;
+    margin-left: 5%;
+    border:none;
+    padding: 5px;
+    border-radius: 10px;
+    font-family: 'Amatic SC', cursive;
+    color: #555555; 
+    box-shadow: 0 0 10px 10px 	#EEFFFF; 
+  }
+  .f_icon_f{
+    margin: 10px 0 0 33%;
+    font: 1.6rem;
+    width: 100%;
+  }
+  .f_submit_f{
+    font: 1.6rem;
+    
+  }
+  .create{
+    margin-top: 80px;
+    border:none;
+    width: 30%;
+    margin-left: 35%;
+    height: 50px;
+    color: white;
+    background-color: #003366;
+    font-size: 1.3rem;
+    border-radius: 5px;
+    color: #EDFFBE; 
+    cursor : pointer;
+  }
+  #file_bottan{
+    display:none;
+  }
+
+  .pic_box{
+    margin-top: 40px;
+    margin-left: 70%;
+    padding-left: 5px;
+    background-color: #66FFCC;
+    box-shadow: 0 0 10px 10px 	#66FFCC; 
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    cursor : pointer;
+  }
+
+  .close_button_user_edit{
+    height: 30px;
+    width: 30px;
+    background-color: #003366;
+    position: relative;
+    color: #EDFFBE;
+    border-radius: 20px;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 1px;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 1px;
+    cursor : pointer;
+  }
+  .close_text_user_edit{
+    text-align: center;
+    position: relative;
+    font-size:28px;
+    bottom: 10px;
+    cursor : pointer;
+  }
+}
+
+@media screen and (max-width:1279px) {
+  .user_edit_form{
+    text-align: center;
+    margin: 0 auto;
+    width: 100%;
+    padding: 120px 5% 30px 5%;
+    background-color: #EDFFBE;
+    box-shadow: 1px 1px 2px gray;
+  }
+
+  .f_name_f{
+    padding-left:5%;
+    margin: 20px 5%;
+    font: 1.6rem;
+  }
+  .form_name{
+    width: 20%;
+    height: 35px;
+    margin-left: 5%;
+  }
+  .f_birth_f{
+    padding-left:5%;
+    margin: 20px 5%;
+    font: 1.6rem;
+  }
+
+  .form_year{
+    width: 18%;
+    height: 35px;
+  }
+  .form_month{
+    width: 18%;
+    height: 35px;
+  }
+  .form_day{
+    width: 18%;
+    height: 35px;
+  }
+  .f_intoro_f{
+    padding-left:5%;
+    margin: 20px 30px;
+    font: 1.6rem;
+  }
+  .form_intro2{
+    width: 50%;
+    height: 35px;
+  }
+  .f_icon_f{
+    padding-left:5%;
+    margin: 10px 5%;
+    font: 1.6rem;
+  }
+  .f_submit_f{
+    font: 1.6rem;
+  }
+  .create{
+    margin-top: 120px;
+    border:none;
+    width: 30%;
+
+    height: 50px;
+    color: white;
+    background-color: #003366;
+    font-size: 1.3rem;
+    border-radius: 5px;
+  }
+
+}
