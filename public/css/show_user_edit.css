@@ -475,5 +475,19 @@
       box-shadow: 0 0 10px 10px 	#EEFFFF; 
     }
 
+    .create{
+      margin-top: 40px;
+      border:none;
+      width: 30%;
+      margin-left: 20%;
+      height: 50px;
+      color: white;
+      background-color: #003366;
+      font-size: 1.3rem;
+      border-radius: 5px;
+      color: #EDFFBE; 
+      cursor : pointer;
+    }
+
   }
 

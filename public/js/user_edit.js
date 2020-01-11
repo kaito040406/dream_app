@@ -33,6 +33,7 @@ $(function(){
         if(user_data.message == "エラー"){
           alert(user_data.message);
         } else{
+          var token = $('meta[name="csrf-token"]').attr('content');
           var user_edit_html = `
                                 <div class="edit_personal_in" id="1"> 
                                   <div class="close_button_user_edit">
@@ -42,7 +43,7 @@ $(function(){
                                   </div>
                                   <div class="user_edit_form">
                                     <form action="/users/${user_data.user.id}" method="post" id="user_edit_bottan" enctype="multipart/form-data">
-                                      <input type="hidden" name="_token" value="BJ5mLgM6meZCIJZjXH4DLNFknVCAqVkglSVZvNI1">
+                                      <input type="hidden" name="_token" value="${token}">
                                       <div class="f_name_f">
                                         お名前
                                         <input type="text" class="form_name" name="name" placeholder="お名前" value="${user_data.user.name}">
@@ -105,7 +106,6 @@ $(function(){
       return false;
     }
     reader.onload = function() {
-      console.log("ok")
       var append_html = `<img src="` + reader.result +`" alt="inu" class="edit_icon">`;
       $(".edit_icon_box").empty();
       $(".edit_icon_box").append(append_html);
