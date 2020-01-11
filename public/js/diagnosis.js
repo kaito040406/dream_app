@@ -183,7 +183,7 @@ $(function(){
                     var open_data_html = `
                                           <div class="open_text_data">
                                             <div class="open_text_introduction">
-                                              あたなの合計値は
+                                              あなたの合計値は
                                             </div>
                                             <div class="open_text_data_text">
                                               ${sum_data}
