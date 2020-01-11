@@ -105,7 +105,7 @@
     
   }
   .create{
-    margin-top: 80px;
+    margin-top: 40px;
     border:none;
     width: 30%;
     margin-left: 35%;
@@ -122,8 +122,8 @@
   }
 
   .pic_box{
-    margin-top: 40px;
-    margin-left: 70%;
+    margin-top: 30px;
+    margin-left: 40%;
     padding-left: 5px;
     background-color: #66FFCC;
     box-shadow: 0 0 10px 10px 	#66FFCC; 
@@ -152,6 +152,23 @@
     font-size:28px;
     bottom: 10px;
     cursor : pointer;
+  }
+
+  .edit_icon{
+    position: absolute;
+    height: 100px;
+    width: 100px;
+    border-radius: 50px;
+    border: 3px solid #FF55FF;
+    left: 58%;
+    top: 50%;
+  }
+
+  .picture_box{
+    border: 1px solid #FF55FF;
+    border-radius: 25px;
+    margin: 20px 10%;
+    padding:20px 0;
   }
 }
 

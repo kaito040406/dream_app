@@ -129,17 +129,22 @@
                       一言紹介
                       <input type="text" class="form_intro2" name="intro" value="{{ $user->intro }}">
                     </div>
-                    <label>
-                      <div class="f_icon_f">
-                        画像を選択してください</br>
-                        <div class = "pic_box">
-                          <span class="filelabel" title="ファイルを選択">
-                            <img src="/images/camera.png" width="32" height="32" alt="＋画像">
-                          </span>
+                    <div class = "picture_box">
+                      <label>
+                        <div class="f_icon_f">
+                          画像を選択してください</br>
+                          <div class = "pic_box">
+                            <span class="filelabel" title="ファイルを選択">
+                              <img src="/images/camera.png" width="32" height="32" alt="＋画像">
+                            </span>
+                          </div>
+                          <input type="file" name="icon" class="file_bottan" id = "file_bottan" value="{{ $user->icon }}" accept=".jpg,.png">
                         </div>
-                        <input type="file" name="icon" class="file_bottan" id = "file_bottan" value="{{ $user->icon }}" accept=".jpg,.png">
+                      </label>
+                      <div class ="edit_icon_box">
+                        <img src="/public/avatar/{{$user->icon}}" alt="inu" class="edit_icon">
                       </div>
-                    </label>
+                    </div>
                     <div class="f_submit_f">
                       <input type="hidden" name="_method" value="PUT">
                       <input type="submit" class="create" value="編  集">

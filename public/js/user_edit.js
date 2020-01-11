@@ -3,6 +3,7 @@ $(function(){
     var edit_st = $(".edit_personal_in").attr("id");
     var graph_st = $(".graph_in").attr("id");
     var st_content = $(".new_content_in").attr("id");
+    
     console.log(edit_st)
     if (edit_st == 1){
       $(".edit_personal_in").hide(300);
@@ -23,7 +24,7 @@ $(function(){
         }, 400);
       }
       var user_edit_html = `
-                            <div class="edit_personal_in" id = "1"> 
+                            <div class="edit_personal_in" id="1"> 
                               <div class="close_button_user_edit">
                                 <div class="close_text_user_edit">
                                   ×
@@ -46,17 +47,22 @@ $(function(){
                                     一言紹介
                                     <input type="text" class="form_intro2" name="intro" value="はじめまして">
                                   </div>
-                                  <label>
-                                    <div class="f_icon_f">
-                                      画像を選択してください<br>
-                                      <div class="pic_box">
-                                        <span class="filelabel" title="ファイルを選択">
-                                          <img src="/images/camera.png" width="32" height="32" alt="＋画像">
-                                        </span>
+                                  <div class="picture_box">
+                                    <label>
+                                      <div class="f_icon_f">
+                                        画像を選択してください<br>
+                                        <div class="pic_box">
+                                          <span class="filelabel" title="ファイルを選択">
+                                            <img src="/images/camera.png" width="32" height="32" alt="＋画像">
+                                          </span>
+                                        </div>
+                                        <input type="file" name="icon" class="file_bottan" id="file_bottan" value="noimage.png" accept=".jpg,.png">
                                       </div>
-                                      <input type="file" name="icon" class="file_bottan" id="file_bottan" value="noimage.png" accept=".jpg,.png">
+                                    </label>
+                                    <div class="edit_icon_box">
+                                      <img src="/public/avatar/noimage.png" alt="inu" class="edit_icon">
                                     </div>
-                                  </label>
+                                  </div>
                                   <div class="f_submit_f">
                                     <input type="hidden" name="_method" value="PUT">
                                     <input type="submit" class="create" value="編  集">
