@@ -345,7 +345,6 @@
     padding-top: 270px;
   }
 
-
   .new_content_in{
     display: none;
     position: fixed;
@@ -358,6 +357,20 @@
     border-radius: 20px;
     border: 3px solid #EDFFBE;
   }
+
+  .edit_content_in{
+    display: none;
+    position: fixed;
+    width: 1000px;
+    height: 600px;
+    left: 225px;
+    top: 160px;
+    background-image: url(/images/fukurou.jpg);
+    background-size: cover;
+    border-radius: 20px;
+    border: 3px solid #EDFFBE;
+  }
+
   .icon_image{
     width: 90px;
     height: 90px;
@@ -684,6 +697,20 @@
     overflow: scroll;
   }
 
+  .edit_content_in{
+    display: none;
+    position: fixed;
+    width: 90%;
+    height: 250px;
+    top: 100px;
+    left: 4%;
+    background-image: url(/images/fukurou.jpg);
+    background-size: cover;
+    border-radius: 20px;
+    border: 3px solid #EDFFBE;
+    overflow: scroll;
+  }
+
 
   .graph_in{
     display: none;
@@ -832,6 +859,19 @@
   }
 
   .new_content_in{
+    display: none;
+    position: fixed;
+    width: 340px;
+    height: 400px;
+    left: 4%;
+    top: 150px;
+    background-image: url(/images/fukurou.jpg);
+    background-size: cover;
+    border-radius: 20px;
+    border: 3px solid #EDFFBE;
+  }
+
+  .edit_content_in{
     display: none;
     position: fixed;
     width: 340px;

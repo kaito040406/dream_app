@@ -1,13 +1,14 @@
 $(function(){
   $(document).on('click', '.content_edit_button', function(e){
     var st_content = $(".new_content_in").attr("id");
+    var st_edit_content = $(".edit_content_in").attr("id");
     var st = $(".graph_in").attr("id");
     var edit_st = $(".edit_personal_in").attr("id");
 
-    if(st_content == 2|| st_content == 1){
-      $(".new_content_in").hide(300);
+    if(st_edit_content == 2){
+      $(".edit_content_in").hide(300);
         setTimeout(() => {
-          $(".new_content_page").empty();
+          $(".edit_content_page").empty();
         }, 400);
     }else{
       if(st == 1){
@@ -24,6 +25,9 @@ $(function(){
       }
       if(st_content == 1){
         $(".new_content_in").hide(300);
+        setTimeout(() => {
+          $(".new_content_page").empty();
+        }, 400);
       }
       var content_id = $(this).attr("id");
       var user_id = $(".user_name_box").attr("id");
@@ -40,25 +44,25 @@ $(function(){
 
         if(data.message == "取得完了"){
           var edit_content_html = `
-                                <div class="new_content_in" id="2">
-                                  <div class="close_button_new_content">
+                                <div class="edit_content_in" id="2">
+                                  <div class="close_button_edit_content">
                                     <div class="close_text_new_content">
                                       ×
                                     </div>
                                   </div>
                                   <div class="main_new_content" id="${content_id}">
                                     <div class="main_box_new_content">
-                                        <input type="text" class="title_form" name="title" placeholder="タイトル" value="${data.data.title}">
+                                        <input type="text" class="title_edit" name="title" placeholder="タイトル" value="${data.data.title}">
                                         <div class="form_box_content">
-                                            <textarea class="form_body" name="body" placeholder="メッセージ">${data.data.body}</textarea>
+                                            <textarea class="edit_body" name="body" placeholder="メッセージ">${data.data.body}</textarea>
                                         </div>
                                         <input type="submit" class="content_edit_bottan" id="content_edit_bottan" value="編  集">
                                     </div>
                                   </div>
                                 </div>
                                 `
-          $(".new_content_page").append(edit_content_html);
-          $(".new_content_in").show(300); 
+          $(".edit_content_page").append(edit_content_html);
+          $(".edit_content_in").show(300); 
 
         }else{
           alert(data.message);
@@ -68,8 +72,8 @@ $(function(){
   })
 
   $(document).on('click', '#content_edit_bottan', function(e){
-    var input_title = $(".title_form").val();
-    var input_body = $(".form_body").val();
+    var input_title = $(".title_edit").val();
+    var input_body = $(".edit_body").val();
     var user_id = $(".user_name_box").attr("id");
     var content_id = $(".main_new_content").attr("id");
     $.ajax({
@@ -136,5 +140,11 @@ $(function(){
         alert("エラー")
       }
     })
+  })
+  $(document).on('click', '.close_button_edit_content', function(e){
+    $(".edit_content_in").hide(300);
+    setTimeout(() => {
+      $(".edit_content_page").empty();
+    }, 400);
   })
 })

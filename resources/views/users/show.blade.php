@@ -104,22 +104,9 @@
 
 
             <div class="new_content_page">
-              <!-- <div class="new_content_in" id="1">
-                <div class="close_button_new_content">
-                  <div class="close_text_new_content">
-                    ×
-                  </div>
-                </div>
-                <div class="main_new_content">
-                  <div class="main_box_new_content">
-                      <input type="text" class="title_form" name="title" placeholder="タイトル" value="qqq">
-                      <div class="form_box_content">
-                          <textarea class="form_body" name="body" placeholder="メッセージ">aaaa</textarea>
-                      </div>
-                      <input type="submit" class="content_create_bottan" id="ontent_create_bottan" value="編  集">
-                  </div>
-                </div>
-              </div> -->
+            </div>
+
+            <div class="edit_content_page">
             </div>
 
 

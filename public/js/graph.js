@@ -2,8 +2,9 @@ $(function(){
   $(".likes_box").on('click',function(){
     var st = $(".graph_in").attr("id");
     var st_content = $(".new_content_in").attr("id");
+    var st_edit_content = $(".edit_content_in").attr("id");
     var edit_st = $(".edit_personal_in").attr("id");
-    if(st == 1 || st_content == 2){
+    if(st == 1){
       $(".graph_in").hide(300);
       setTimeout(() => {
         $(".graph").empty();
@@ -21,10 +22,10 @@ $(function(){
             $(".edit_personal").empty();
           }, 400);
       }
-      if(st_content == 2){
-        $(".new_content_in").hide(300);
+      if(st_edit_content == 2){
+        $(".edit_content_in").hide(300);
         setTimeout(() => {
-          $(".new_content_page").empty();
+          $(".edit_content_page").empty();
         }, 400);
       }
       var user_id = $(".user_name_box").attr("id");

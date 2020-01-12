@@ -3,8 +3,9 @@ $(function(){
     var edit_st = $(".edit_personal_in").attr("id");
     var graph_st = $(".graph_in").attr("id");
     var st_content = $(".new_content_in").attr("id");
+    var st_edit_content = $(".edit_content_in").attr("id");
     var user_id = $(".user_name_box").attr("id");
-    if (edit_st == 1 || st_content == 2){
+    if (edit_st == 1){
       $(".edit_personal_in").hide(300);
         setTimeout(() => {
           $(".edit_personal").empty();
@@ -22,10 +23,10 @@ $(function(){
           $(".new_content_page").empty();
         }, 400);
       }
-      if(st_content == 2){
-        $(".new_content_in").hide(300);
+      if(st_edit_content == 2){
+        $(".edit_content_in").hide(300);
         setTimeout(() => {
-          $(".new_content_page").empty();
+          $(".edit_content_page").empty();
         }, 400);
       }
       $.ajax({
