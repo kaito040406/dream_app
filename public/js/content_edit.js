@@ -135,6 +135,11 @@ $(function(){
 
         $("#nomver_"+data.id).empty();
         $("#nomver_"+data.id).append(updata_html);
+
+        $(".edit_content_in").hide(300);
+        setTimeout(() => {
+        $(".edit_content_page").empty();
+    }, 400);
       }
       else{
         alert("エラー")

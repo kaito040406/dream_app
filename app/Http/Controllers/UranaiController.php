@@ -146,7 +146,7 @@ class UranaiController extends Controller
         $current_user = Auth::user();
         
         if($user->id == $current_user->id){
-            $elemets_data = Graph::where('user_id', $user->id)->get();
+            $elemets_data = Graph::where('user_id', $user->id)->orderBy('day', 'asc')->get();
             $json = array(
                 "message" => "取得成功",
                 "data" => $elemets_data

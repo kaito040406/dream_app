@@ -68,7 +68,6 @@ $(function(){
         data: {id: user_id}
       })
       .done(function(datas){
-        // console.log(datas.data)
         var create_day=[];
         var point = [];
         var day_point = [];
