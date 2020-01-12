@@ -4,8 +4,7 @@ $(function(){
     var graph_st = $(".graph_in").attr("id");
     var st_content = $(".new_content_in").attr("id");
     var user_id = $(".user_name_box").attr("id");
-  
-    if (edit_st == 1){
+    if (edit_st == 1 || st_content == 2){
       $(".edit_personal_in").hide(300);
         setTimeout(() => {
           $(".edit_personal").empty();

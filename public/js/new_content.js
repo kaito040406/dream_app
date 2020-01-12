@@ -3,7 +3,7 @@ $(function(){
     var st_content = $(".new_content_in").attr("id");
     var st = $(".graph_in").attr("id");
     var edit_st = $(".edit_personal_in").attr("id");
-    if(st_content == 1){
+    if(st_content == 1 || st_content == 2){
       $(".new_content_in").hide(300);
       setTimeout(() => {
         $(".new_content_page").empty();
@@ -23,6 +23,9 @@ $(function(){
       }
       if(st_content == 2){
         $(".new_content_in").hide(300);
+        setTimeout(() => {
+          $(".new_content_page").empty();
+        }, 400);
       }
       var form_html = `
       <div class="new_content_in" id="1">

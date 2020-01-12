@@ -3,7 +3,7 @@ $(function(){
     var st = $(".graph_in").attr("id");
     var st_content = $(".new_content_in").attr("id");
     var edit_st = $(".edit_personal_in").attr("id");
-    if(st == 1){
+    if(st == 1 || st_content == 2){
       $(".graph_in").hide(300);
       setTimeout(() => {
         $(".graph").empty();

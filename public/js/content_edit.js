@@ -1,58 +1,14 @@
 $(function(){
-  $(".content_edit_button").on('click',function(){
+  $(document).on('click', '.content_edit_button', function(e){
     var st_content = $(".new_content_in").attr("id");
     var st = $(".graph_in").attr("id");
     var edit_st = $(".edit_personal_in").attr("id");
 
-    if(st_content == 2){
-      var content_id = $(this).attr("id");
-      var user_id = $(".user_name_box").attr("id");
-      var now_id = $(".main_new_content").attr("id");
-      if(content_id != now_id){
-        $(".new_content_in").hide(300);
-        $.ajax({
-          url: '/api/ajax/get_edit_content',
-          type: 'get',
-          dataType: 'json',
-          data: {
-            user_id: user_id,
-            content_id: content_id,
-          }
-        })
-        .done(function(data){
-
-          if(data.message == "取得完了"){
-            var edit_content_html = `
-                                  <div class="new_content_in" id="2">
-                                    <div class="close_button_new_content">
-                                      <div class="close_text_new_content">
-                                        ×
-                                      </div>
-                                    </div>
-                                    <div class="main_new_content" id="${content_id}">
-                                      <div class="main_box_new_content">
-                                          <input type="text" class="title_form" name="title" placeholder="タイトル" value="${data.data.title}">
-                                          <div class="form_box_content">
-                                              <textarea class="form_body" name="body" placeholder="メッセージ">${data.data.body}</textarea>
-                                          </div>
-                                          <input type="submit" class="content_edit_bottan" id="content_edit_bottan" value="編  集">
-                                      </div>
-                                    </div>
-                                  </div>
-                                  `
-            $(".new_content_page").append(edit_content_html);
-            $(".new_content_in").show(300); 
-
-          }else{
-            alert(data.message);
-          }
-        })
-      }else{
-        $(".new_content_in").hide(300);
+    if(st_content == 2|| st_content == 1){
+      $(".new_content_in").hide(300);
         setTimeout(() => {
           $(".new_content_page").empty();
         }, 400);
-      }
     }else{
       if(st == 1){
         $(".graph_in").hide(300);

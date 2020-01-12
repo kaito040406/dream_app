@@ -292,7 +292,7 @@ class ContentController extends Controller
     public function ajax_edit_content_json(Request $request) {
         $check_user = User::find($request->user_id);
         $now_user = Auth::user();
-
+        Log::debug($request);
         if($check_user == $now_user){
             $content = Content::find($request->content_id);
             $graph_data = Graph::where('content_id',$request->content_id);
