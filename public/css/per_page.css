@@ -179,6 +179,7 @@
     border: 3px solid #00FFFF;
     float: right;
     margin-right: 20px;
+    cursor : pointer;
   }
   .content_edit_image{
     padding-left: 6px;
@@ -642,6 +643,7 @@
     border: 3px solid #00FFFF;
     float: right;
     margin-right: 4%;
+    cursor : pointer;
   }
   .edit_content{
     color: black;

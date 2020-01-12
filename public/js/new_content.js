@@ -21,6 +21,9 @@ $(function(){
           $(".edit_personal").empty();
         }, 400);
       }
+      if(st_content == 2){
+        $(".new_content_in").hide(300);
+      }
       var form_html = `
       <div class="new_content_in" id="1">
         <div class="close_button_new_content">
@@ -72,7 +75,7 @@ $(function(){
           $(".new_content_page").empty();
         }, 400);
         var append_html = `
-                      <div class="content_main_box">
+                      <div class="content_main_box" id="nomver_${data.id}">
                           <div class="content_day">
                             投稿日
                             ${data.day}

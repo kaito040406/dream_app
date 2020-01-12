@@ -18,6 +18,7 @@
     <script type="module" src="{{ asset('js/graph.js') }}"></script>
     <script type="module" src="{{ asset('js/new_content.js') }}"></script>
     <script type="module" src="{{ asset('js/user_edit.js') }}"></script>
+    <script type="module" src="{{ asset('js/content_edit.js') }}"></script>
     <script type="module" src="{{ asset('js/scroll.js') }}"></script>
     <link href="{{ asset('css/mainpage.css') }}" rel="stylesheet">
     <link href="{{ asset('css/per_page.css') }}" rel="stylesheet">
@@ -101,65 +102,38 @@
               </div>
             </div>
 
+
             <div class="new_content_page">
+              <!-- <div class="new_content_in" id="1">
+                <div class="close_button_new_content">
+                  <div class="close_text_new_content">
+                    ×
+                  </div>
+                </div>
+                <div class="main_new_content">
+                  <div class="main_box_new_content">
+                      <input type="text" class="title_form" name="title" placeholder="タイトル" value="qqq">
+                      <div class="form_box_content">
+                          <textarea class="form_body" name="body" placeholder="メッセージ">aaaa</textarea>
+                      </div>
+                      <input type="submit" class="content_create_bottan" id="ontent_create_bottan" value="編  集">
+                  </div>
+                </div>
+              </div> -->
             </div>
 
 
             <div class="edit_personal">
-              <!-- <div class="edit_personal_in" id = "1"> 
-                <div class="close_button">
-                  <div class="close_text">
-                    ×
-                  </div>
-                </div>
-                <div class="user_edit_form">
-                  <form action="/users/{{$user->id}}" method="post" id="user_edit_bottan" enctype="multipart/form-data">
-                    {{ csrf_field() }}
-                    <div class="f_name_f">
-                      お名前
-                      <input type="text" class="form_name" name="name" placeholder="お名前" value="{{ $user->name }}">
-                    </div>
-                    <div class="f_birth_f">
-                      生年月日
-                      <input type="text" class="form_year" name="birth_year" placeholder="1993" value="{{ $user->birth_year }}">年
-                      <input type="text" class="form_month" name="birth_month" placeholder="2" value="{{ $user->birth_month }}">月
-                      <input type="text" class="form_day" name="birth_day" placeholder="5" value="{{ $user->birth_day }}">日
-                    </div>
-                    <div class="f_intoro_f">
-                      一言紹介
-                      <input type="text" class="form_intro2" name="intro" value="{{ $user->intro }}">
-                    </div>
-                    <div class = "picture_box">
-                      <label>
-                        <div class="f_icon_f">
-                          画像を選択してください</br>
-                          <div class = "pic_box">
-                            <span class="filelabel" title="ファイルを選択">
-                              <img src="/images/camera.png" width="32" height="32" alt="＋画像">
-                            </span>
-                          </div>
-                          <input type="file" name="icon" class="file_bottan" id = "file_bottan" value="{{ $user->icon }}" accept=".jpg,.png">
-                        </div>
-                      </label>
-                      <div class ="edit_icon_box">
-                        <img src="/public/avatar/{{$user->icon}}" alt="inu" class="edit_icon">
-                      </div>
-                    </div>
-                    <div class="f_submit_f">
-                      <input type="hidden" name="_method" value="PUT">
-                      <input type="submit" class="create" value="編  集">
-                    </div>
-                  </form>
-                </div>
-              </div> -->
             </div>
 
 
             <div class="graph">
             </div>
 
+
             <div class="load">
             </div>
+
 
             <div class = "content_zone">
               <div class="content_box">
@@ -169,16 +143,16 @@
                 <div class="main_zone">
                   @if($contents_count != 0)
                     @foreach ($contents as $content)
-                      <div class="content_main_box">
+                      <div class="content_main_box" id = "nomver_{{$content->id}}">
                         <div class="content_day">
                           投稿日
                           {{$content->created_at->format('Y年m月d日')}}
                         </div>
-                        <div class="content_title">
+                        <div class="content_title" id = "{{$content->id}}">
                           タイトル:
                           {{$content->title}}
                         </div>
-                        <div class="content_body">
+                        <div class="content_body" id = "{{$content->id}}">
                           {{$content->body}}
                         </div>
                         <div class="setting_bottam">
@@ -186,8 +160,8 @@
                             <img src="/public/avatar/{{$user->icon}}" alt="inu" class="icon_image_2">
                             <div class="creater_content">{{$user->name}}さんの投稿</div>
                           </div>
-                          <div class="content_edit_button">
-                            <a href="/users/{{$user->id}}/contents/{{$content->id}}/edit" method="get">
+                          <div class="content_edit_button" id = "{{$content->id}}">
+                            <a>
                               <img src="/images/illust1109.png" alt="inu" class="content_edit_image_2">
                               <div class="edit_content">編集</div>
                             </a><br />

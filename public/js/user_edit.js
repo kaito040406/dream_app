@@ -23,6 +23,12 @@ $(function(){
           $(".new_content_page").empty();
         }, 400);
       }
+      if(st_content == 2){
+        $(".new_content_in").hide(300);
+        setTimeout(() => {
+          $(".new_content_page").empty();
+        }, 400);
+      }
       $.ajax({
         url: '/api/ajax/get_user',
         type: 'get',
@@ -112,7 +118,6 @@ $(function(){
     }
     // console.log(render.readyState)
     
-
     reader.readAsDataURL(select_image); 
   })
 })

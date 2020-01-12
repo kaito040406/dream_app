@@ -33,3 +33,5 @@ Route::post('/api/ajax/make_graph', 'UranaiController@ajax_post_json');
 Route::get('/api/ajax/graph', 'UranaiController@ajax_graph_json');
 Route::post('/api/ajax/new_content', 'ContentController@ajax_new_content_json');
 Route::get('/api/ajax/get_user', 'UserController@ajax_get_user');
+Route::get('/api/ajax/get_edit_content', 'ContentController@ajax_get_content_json');
+Route::post('/api/ajax/edit_content', 'ContentController@ajax_edit_content_json');

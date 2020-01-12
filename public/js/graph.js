@@ -1,4 +1,3 @@
-
 $(function(){
   $(".likes_box").on('click',function(){
     var st = $(".graph_in").attr("id");
@@ -21,6 +20,12 @@ $(function(){
           setTimeout(() => {
             $(".edit_personal").empty();
           }, 400);
+      }
+      if(st_content == 2){
+        $(".new_content_in").hide(300);
+        setTimeout(() => {
+          $(".new_content_page").empty();
+        }, 400);
       }
       var user_id = $(".user_name_box").attr("id");
       var html = `<div class="graph_in" id="1">

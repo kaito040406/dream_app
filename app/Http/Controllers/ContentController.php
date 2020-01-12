@@ -268,4 +268,75 @@ class ContentController extends Controller
         
         return $json;
     }
+
+    public function ajax_get_content_json(Request $request) {
+        $check_user = User::find($request->user_id);
+        $now_user = Auth::user();
+
+        if($check_user == $now_user){
+            $content = Content::find($request->content_id);
+            $json = array(
+                "message" => "取得完了",
+                "data" => $content,
+            );
+        }
+        else{
+            $json = array(
+                "message" => "取得失敗"
+            );
+        }
+
+        return $json;
+    }
+
+    public function ajax_edit_content_json(Request $request) {
+        $check_user = User::find($request->user_id);
+        $now_user = Auth::user();
+
+        if($check_user == $now_user){
+            $content = Content::find($request->content_id);
+            $graph_data = Graph::where('content_id',$request->content_id);
+            $form = $request->all();
+            $rules = [
+                'user_id' => 'required',
+                'title' => 'required',
+                'body' => 'required',
+            ];
+            $body = [
+                'user_id.integer' => 'System Error',
+                'user_id.required' => 'System Error',
+                'title.required'=> 'タイトルが入力されていません',
+                'body.required'=> 'メッセージが入力されていません'
+            ];
+            $validator = Validator::make($form, $rules, $body);
+
+            if($validator->fails()){
+                $json = array(
+                    "message" => "エラー"
+                );
+            }else{
+                unset($form['_token']);
+                $content->user_id = $request->user_id;
+                $content->title = $request->title;
+                $content->body = $request->body;
+                $content->save();
+                $graph_data ->delete();
+
+                $json = array(
+                    "message" => "編集完了",
+                    "title" => $request->title,
+                    "body" => $request->body,
+                    "id" => $request->content_id,
+                    "user" => $now_user
+                );
+            }
+        }
+        else{
+            $json = array(
+                "message" => "エラー"
+            );
+        }
+
+        return $json;
+    }
 }
