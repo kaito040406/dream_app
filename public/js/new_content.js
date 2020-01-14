@@ -94,7 +94,7 @@ $(function(){
                           <div class="setting_bottam">
                             <div class="creater_box">
                               <img src="/public/avatar/${data.user.icon}" alt="inu" class="icon_image_2">
-                              <div class="creater_content">kaitoさんの投稿です</div>
+                              <div class="creater_content">${data.user.name}さんの投稿です</div>
                             </div>
                             <div class="content_edit_button">
                               <a href="/users/${data.data.user_id}/contents/${data.data.id}/edit" method="get">
