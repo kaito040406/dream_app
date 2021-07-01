@@ -37,14 +37,14 @@ class UranaiController extends Controller
         
         if($request->check_texts != null){
             foreach($request->check_texts as $request_data){
-                if($request_data=='夢'){
-                }elseif($request_data=='見'){
-                }else{
+                // if($request_data=='夢'){
+                // }elseif($request_data=='見'){
+                // }else{
                     // Log::debug($request_data);
                     // $select_uranai[] = Uranai::where('title', 'LIKE' , "%$request_data%")->get();
                     // $selects_uranai[] = $select_uranai[];
-                    $selects_uranai[] = Uranai::where('title', 'LIKE' , "%$request_data%")->get(); 
-                }
+                    $selects_uranai[] = Uranai::where('title', $request_data)->get(); 
+                // }
             }
 
             
